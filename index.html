@@ -7,1007 +7,1109 @@
 <meta name="description" content="Imported Dubai perfumes, Canadian-made premium skincare, and exclusive 3SSS gift sets. Free shipping over $150 CAD across Canada.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --black: #0a0a0a;
-    --black-soft: #141414;
-    --black-elev: #1c1c1c;
-    --gold: #d4af37;
-    --gold-bright: #f4d03f;
-    --gold-deep: #b8860b;
-    --gold-soft: #e8c97c;
-    --cream: #faf6ee;
-    --grey-1: #2a2a2a;
-    --grey-2: #3a3a3a;
-    --grey-text: #a9a9a9;
-    --grey-mute: #707070;
-    --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.15);
-    --shadow-deep: 0 20px 60px rgba(0, 0, 0, 0.5);
-    --gradient-gold: linear-gradient(135deg, #b8860b 0%, #d4af37 35%, #f4d03f 50%, #d4af37 65%, #b8860b 100%);
-    --gradient-gold-soft: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-    --serif: 'Cormorant Garamond', 'Italiana', Georgia, serif;
+    --ink: #0a0a0b;
+    --ink-soft: #111114;
+    --ink-elev: #181820;
+    --line: rgba(201, 164, 76, 0.14);
+    --line-strong: rgba(201, 164, 76, 0.32);
+    --gold: #c9a44c;
+    --gold-warm: #d9b56a;
+    --gold-deep: #8c6f2a;
+    --cream: #f0e9da;
+    --cream-mute: #b8b1a4;
+    --grey: #6e6a62;
+    --serif: 'Cormorant Garamond', Georgia, serif;
     --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --max: 1280px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     font-family: var(--sans);
-    background: var(--black);
+    background: var(--ink);
     color: var(--cream);
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.7;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    font-weight: 300;
   }
-
-  ::selection { background: var(--gold); color: var(--black); }
-
-  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; letter-spacing: 0.02em; }
-
-  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--gold); color: var(--ink); }
   img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
   button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
 
-  /* ============ ANNOUNCEMENT BAR ============ */
-  .announce {
-    background: var(--gradient-gold);
-    color: var(--black);
-    text-align: center;
-    padding: 8px 16px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
+  /* TYPOGRAPHY */
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.005em; line-height: 1.1; }
+  h4 { font-family: var(--sans); font-weight: 500; letter-spacing: 0.02em; }
+  .display { font-size: clamp(48px, 7vw, 88px); font-weight: 300; line-height: 1; }
+  .display em { font-style: italic; color: var(--gold-warm); font-weight: 400; }
+  .h2 { font-size: clamp(36px, 4.4vw, 56px); font-weight: 300; }
+  .h2 em { font-style: italic; color: var(--gold-warm); font-weight: 400; }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
   }
 
-  /* ============ HEADER ============ */
+  .lead { color: var(--cream-mute); font-size: 17px; line-height: 1.7; }
+
+  /* CONTAINER */
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+
+  /* ANNOUNCE */
+  .announce {
+    background: var(--ink-soft);
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--cream-mute);
+  }
+  .announce span { color: var(--gold); margin: 0 6px; }
+
+  /* HEADER */
   header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(10, 10, 10, 0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-    transition: all 0.3s ease;
+    background: rgba(10, 10, 11, 0.78);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border-bottom: 1px solid var(--line);
+    transition: padding 0.3s var(--ease);
   }
-  .nav-wrap {
-    max-width: 1400px;
+  .nav {
+    max-width: var(--max);
     margin: 0 auto;
-    padding: 18px 28px;
+    padding: 22px 32px;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
   }
-  .nav-left, .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-  }
+  header.scrolled .nav { padding-top: 14px; padding-bottom: 14px; }
+  .nav-left, .nav-right { display: flex; align-items: center; gap: 32px; }
   .nav-right { justify-content: flex-end; }
-
   .nav-link {
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
+    color: var(--cream-mute);
+    transition: color 0.2s var(--ease);
     position: relative;
-    padding: 4px 0;
-    transition: color 0.2s ease;
   }
   .nav-link:hover { color: var(--gold); }
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 1px;
-    width: 0;
-    background: var(--gradient-gold);
-    transition: width 0.3s ease;
-  }
-  .nav-link:hover::after { width: 100%; }
+  .nav-link.is-active { color: var(--gold); }
 
   .logo {
-    font-family: var(--serif);
-    font-size: 26px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
     text-align: center;
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
     line-height: 1;
   }
-  .logo-sub {
-    display: block;
-    font-family: var(--sans);
-    font-size: 9px;
+  .logo .mark {
+    font-family: var(--serif);
+    font-size: 28px;
     font-weight: 500;
-    letter-spacing: 0.4em;
-    color: var(--gold-soft);
-    -webkit-text-fill-color: var(--gold-soft);
-    margin-top: 4px;
+    letter-spacing: 0.06em;
+    color: var(--gold-warm);
+  }
+  .logo .sub {
+    display: block;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.45em;
+    color: var(--cream-mute);
+    margin-top: 6px;
   }
 
   .icon-btn {
     width: 40px;
     height: 40px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    transition: all 0.2s ease;
+    color: var(--cream);
+    transition: all 0.2s var(--ease);
     position: relative;
   }
-  .icon-btn:hover { background: rgba(212, 175, 55, 0.1); color: var(--gold); }
-  .icon-btn svg { width: 22px; height: 22px; }
+  .icon-btn:hover { color: var(--gold); background: rgba(201, 164, 76, 0.06); }
+  .icon-btn svg { width: 20px; height: 20px; stroke-width: 1.4; }
 
   .cart-count {
     position: absolute;
-    top: 2px;
-    right: 2px;
-    background: var(--gradient-gold);
-    color: var(--black);
-    font-size: 10px;
+    top: 4px; right: 4px;
+    background: var(--gold);
+    color: var(--ink);
+    font-size: 9px;
     font-weight: 700;
-    width: 18px;
-    height: 18px;
+    width: 16px; height: 16px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transform: scale(0);
-    transition: transform 0.2s ease;
+    transition: transform 0.25s var(--ease);
   }
   .cart-count.show { transform: scale(1); }
 
   .menu-btn { display: none; }
 
-  /* ============ HERO ============ */
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 30px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    transition: all 0.3s var(--ease);
+    border: 1px solid transparent;
+    background: none;
+    color: inherit;
+    font-family: var(--sans);
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--ink);
+    border-color: var(--gold);
+  }
+  .btn-primary:hover {
+    background: var(--gold-warm);
+    border-color: var(--gold-warm);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 30px -12px rgba(201, 164, 76, 0.55);
+  }
+  .btn-ghost {
+    border-color: var(--line-strong);
+    color: var(--cream);
+  }
+  .btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .btn-block { width: 100%; justify-content: center; }
+  .btn svg { width: 12px; height: 12px; transition: transform 0.3s var(--ease); }
+  .btn:hover svg { transform: translateX(4px); }
+
+  /* HERO */
   .hero {
     position: relative;
-    height: 92vh;
-    min-height: 640px;
-    background:
-      radial-gradient(ellipse at 30% 20%, rgba(212, 175, 55, 0.18) 0%, transparent 50%),
-      radial-gradient(ellipse at 70% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-      linear-gradient(180deg, #0a0a0a 0%, #141414 100%);
-    overflow: hidden;
+    min-height: 88vh;
+    padding: 60px 0 40px;
     display: flex;
     align-items: center;
+    overflow: hidden;
   }
   .hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image:
-      repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(212, 175, 55, 0.02) 2px, rgba(212, 175, 55, 0.02) 4px);
+    background:
+      radial-gradient(ellipse 800px 600px at 75% 50%, rgba(201, 164, 76, 0.10) 0%, transparent 60%),
+      radial-gradient(ellipse 600px 400px at 20% 80%, rgba(201, 164, 76, 0.04) 0%, transparent 60%);
     pointer-events: none;
   }
-  .hero-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 28px;
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 60px;
-    align-items: center;
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201, 164, 76, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201, 164, 76, 0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+  .hero-grid {
     width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 80px;
+    align-items: center;
     position: relative;
     z-index: 2;
   }
-  .hero-tagline {
+  .hero-copy .eyebrow { margin-bottom: 28px; }
+  .hero-copy h1 { margin-bottom: 28px; }
+  .hero-copy .lead { max-width: 460px; margin-bottom: 40px; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-meta {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    gap: 40px;
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.4em;
+    color: var(--cream-mute);
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 24px;
+  }
+  .hero-meta strong {
+    display: block;
+    font-family: var(--serif);
+    color: var(--gold-warm);
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-bottom: 4px;
+  }
+
+  /* HERO BOTTLE */
+  .hero-stage {
+    position: relative;
+    aspect-ratio: 4/5;
+    max-width: 460px;
+    margin-left: auto;
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
   }
-  .hero-tagline::before {
+  .hero-stage::before {
     content: '';
-    width: 40px;
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 55%, rgba(201, 164, 76, 0.22) 0%, transparent 55%);
+    filter: blur(8px);
+    animation: aura 6s var(--ease) infinite;
+  }
+  @keyframes aura {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.05); opacity: 1; }
+  }
+  .hero-stage::after {
+    content: '';
+    position: absolute;
+    bottom: 18%;
+    left: 50%;
+    width: 60%;
+    height: 12px;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse, rgba(0,0,0,0.6) 0%, transparent 70%);
+    filter: blur(6px);
+  }
+  .hero-bottle-svg {
+    position: relative;
+    z-index: 2;
+    width: 78%;
+    filter: drop-shadow(0 24px 48px rgba(0,0,0,0.55));
+    transition: transform 0.8s var(--ease);
+  }
+  .hero-stage:hover .hero-bottle-svg { transform: translateY(-6px); }
+
+  .hero-tag {
+    position: absolute;
+    top: 8%;
+    right: 0;
+    z-index: 3;
+    border: 1px solid var(--line-strong);
+    background: rgba(10,10,11,0.7);
+    backdrop-filter: blur(10px);
+    padding: 12px 18px;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold-warm);
+  }
+  .hero-tag-2 {
+    position: absolute;
+    bottom: 12%;
+    left: -10%;
+    z-index: 3;
+    border: 1px solid var(--line-strong);
+    background: rgba(10,10,11,0.7);
+    backdrop-filter: blur(10px);
+    padding: 14px 18px;
+    color: var(--cream);
+  }
+  .hero-tag-2 .price {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--gold-warm);
+    display: block;
+  }
+  .hero-tag-2 .lbl {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream-mute);
+    margin-top: 2px;
+  }
+
+  /* BRAND STRIP (replaces marquee) */
+  .strip {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--ink-soft);
+  }
+  .strip-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    align-items: center;
+  }
+  .strip-cell {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-right: 1px solid var(--line);
+    padding-right: 32px;
+  }
+  .strip-cell:last-child { border-right: none; padding-right: 0; }
+  .strip-cell svg { width: 22px; height: 22px; color: var(--gold); flex-shrink: 0; stroke-width: 1.3; }
+  .strip-cell .ttl {
+    font-size: 12px;
+    color: var(--cream);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    margin-bottom: 2px;
+  }
+  .strip-cell .sub {
+    font-size: 11px;
+    color: var(--cream-mute);
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+
+  /* SECTIONS */
+  section { padding: 120px 0; }
+  .section-head {
+    margin-bottom: 64px;
+    max-width: 720px;
+  }
+  .section-head.center { text-align: center; margin-left: auto; margin-right: auto; }
+  .section-head.center .eyebrow { justify-content: center; }
+  .section-head.center .eyebrow::before { display: none; }
+  .section-head.center .eyebrow::after {
+    content: '';
+    width: 24px;
     height: 1px;
     background: var(--gold);
   }
-  .hero h1 {
-    font-size: clamp(48px, 8vw, 96px);
-    font-weight: 400;
-    line-height: 0.95;
-    margin-bottom: 28px;
-    letter-spacing: -0.02em;
-  }
-  .hero h1 .accent {
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-style: italic;
-  }
-  .hero p {
-    font-size: 17px;
-    color: var(--grey-text);
-    max-width: 480px;
-    margin-bottom: 40px;
-    line-height: 1.7;
-  }
-  .hero-cta {
+  .section-head .eyebrow { margin-bottom: 18px; }
+  .section-head h2 { margin-bottom: 16px; }
+  .section-head .lead { max-width: 540px; }
+  .section-head.center .lead { margin: 0 auto; }
+
+  .section-bar {
     display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+    margin-bottom: 48px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--line);
   }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 32px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    border-radius: 2px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-  }
-  .btn-primary {
-    background: var(--gradient-gold);
-    color: var(--black);
-    box-shadow: var(--shadow-gold);
-  }
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.35);
-  }
-  .btn-ghost {
-    border: 1px solid var(--gold);
-    color: var(--gold);
-  }
-  .btn-ghost:hover {
-    background: var(--gold);
-    color: var(--black);
-  }
-  .btn-block { width: 100%; justify-content: center; }
+  .section-bar .head { max-width: 560px; }
+  .section-bar .head h2 { margin-bottom: 12px; }
+  .section-bar .head .eyebrow { margin-bottom: 14px; }
 
-  /* Hero visual - perfume bottle showcase */
-  .hero-visual {
-    position: relative;
-    height: 540px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .hero-bottle {
-    position: absolute;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .hero-bottle.b1 { transform: translate(-90px, -10px) rotate(-6deg); z-index: 2; }
-  .hero-bottle.b2 { transform: translate(0, 10px); z-index: 3; }
-  .hero-bottle.b3 { transform: translate(90px, -20px) rotate(6deg); z-index: 2; }
-  .hero-visual:hover .hero-bottle.b1 { transform: translate(-130px, -20px) rotate(-10deg); }
-  .hero-visual:hover .hero-bottle.b3 { transform: translate(130px, -30px) rotate(10deg); }
-
-  .hero-glow {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, transparent 60%);
-    border-radius: 50%;
-    z-index: 1;
-    animation: pulse 4s ease-in-out infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 0.6; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.1); }
-  }
-
-  /* ============ MARQUEE ============ */
-  .marquee {
-    background: var(--black-soft);
-    border-top: 1px solid rgba(212, 175, 55, 0.15);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-    padding: 22px 0;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  .marquee-track {
-    display: inline-flex;
-    gap: 60px;
-    animation: scroll 40s linear infinite;
-    font-family: var(--serif);
-    font-size: 22px;
-    font-style: italic;
-    color: var(--gold-soft);
-  }
-  .marquee-track span { display: inline-flex; align-items: center; gap: 60px; }
-  .marquee-track span::after {
-    content: '✦';
-    color: var(--gold);
-    font-size: 14px;
-  }
-  @keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  /* ============ SECTIONS ============ */
-  section { padding: 100px 28px; }
-  .section-wrap { max-width: 1400px; margin: 0 auto; }
-
-  .section-head { text-align: center; margin-bottom: 60px; }
-  .section-eyebrow {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-  }
-  .section-title {
-    font-size: clamp(36px, 5vw, 56px);
-    font-weight: 400;
-    margin-bottom: 16px;
-    letter-spacing: -0.01em;
-  }
-  .section-title .accent {
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-style: italic;
-  }
-  .section-sub {
-    color: var(--grey-text);
-    font-size: 16px;
-    max-width: 560px;
-    margin: 0 auto;
-  }
-
-  /* ============ FILTER BAR ============ */
+  /* FILTER BAR */
   .filter-bar {
     display: flex;
+    gap: 8px;
     flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 50px;
+    align-items: center;
   }
   .filter-chip {
-    padding: 10px 22px;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 50px;
-    font-size: 12px;
+    padding: 9px 18px;
+    font-size: 11px;
     font-weight: 500;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--grey-text);
-    transition: all 0.25s ease;
-    cursor: pointer;
+    color: var(--cream-mute);
+    border: 1px solid var(--line);
+    background: transparent;
+    transition: all 0.25s var(--ease);
   }
-  .filter-chip:hover { color: var(--gold); border-color: var(--gold); }
+  .filter-chip:hover { color: var(--gold); border-color: var(--line-strong); }
   .filter-chip.active {
-    background: var(--gradient-gold);
-    color: var(--black);
-    border-color: transparent;
-    font-weight: 600;
+    background: var(--cream);
+    color: var(--ink);
+    border-color: var(--cream);
   }
 
-  /* ============ PRODUCT GRID ============ */
+  /* PRODUCT GRID */
   .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 28px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
   }
   .product {
-    background: linear-gradient(160deg, var(--black-elev) 0%, var(--black-soft) 100%);
-    border: 1px solid rgba(212, 175, 55, 0.12);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    background: var(--ink);
+    transition: all 0.5s var(--ease);
   }
-  .product:hover {
-    transform: translateY(-6px);
-    border-color: rgba(212, 175, 55, 0.4);
-    box-shadow: var(--shadow-deep), 0 0 50px rgba(212, 175, 55, 0.1);
-  }
-
   .product-img-wrap {
     position: relative;
-    aspect-ratio: 1;
+    aspect-ratio: 4/5;
     background:
-      radial-gradient(ellipse at center, rgba(212, 175, 55, 0.12) 0%, transparent 70%),
-      linear-gradient(180deg, #1c1c1c 0%, #0f0f0f 100%);
+      radial-gradient(ellipse at 50% 60%, rgba(201, 164, 76, 0.10) 0%, transparent 65%),
+      linear-gradient(180deg, #14141a 0%, #0a0a0c 100%);
+    border: 1px solid var(--line);
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     cursor: pointer;
+    transition: border-color 0.4s var(--ease);
   }
+  .product:hover .product-img-wrap { border-color: var(--line-strong); }
   .product-img-wrap svg {
-    width: 60%;
-    height: 75%;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+    width: 56%;
+    transition: transform 0.7s var(--ease);
+    filter: drop-shadow(0 18px 30px rgba(0,0,0,0.55));
   }
-  .product:hover .product-img-wrap svg { transform: scale(1.08) translateY(-4px); }
+  .product:hover .product-img-wrap svg { transform: translateY(-6px) scale(1.04); }
 
   .product-badge {
     position: absolute;
     top: 16px;
     left: 16px;
-    background: var(--gradient-gold);
-    color: var(--black);
-    padding: 5px 12px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
+    background: rgba(10, 10, 11, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--line-strong);
+    color: var(--gold-warm);
+    padding: 5px 11px;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    border-radius: 2px;
   }
-  .product-quick {
+
+  .product-quick-add {
     position: absolute;
-    inset: auto 0 0 0;
-    padding: 16px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-    background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 100%);
+    inset: auto 16px 16px;
+    background: var(--cream);
+    color: var(--ink);
+    padding: 13px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-align: center;
+    transform: translateY(calc(100% + 16px));
+    opacity: 0;
+    transition: all 0.4s var(--ease);
   }
-  .product:hover .product-quick { transform: translateY(0); }
+  .product:hover .product-quick-add { transform: translateY(0); opacity: 1; }
+  .product-quick-add:hover { background: var(--gold); }
+  .product-quick-add.added { background: var(--gold); }
 
   .product-info {
-    padding: 22px;
+    padding: 22px 4px 4px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px 12px;
+    align-items: baseline;
   }
   .product-meta {
+    grid-column: 1 / -1;
     font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.3em;
+    font-weight: 500;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
   .product-name {
     font-family: var(--serif);
     font-size: 22px;
     font-weight: 500;
-    margin-bottom: 6px;
     color: var(--cream);
-  }
-  .product-desc {
-    font-size: 13px;
-    color: var(--grey-text);
-    margin-bottom: 16px;
-    line-height: 1.5;
-    min-height: 40px;
-  }
-  .product-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
   }
   .product-price {
     font-family: var(--serif);
-    font-size: 22px;
+    font-size: 20px;
+    color: var(--gold-warm);
     font-weight: 500;
-    color: var(--gold);
+    white-space: nowrap;
   }
-  .product-price .currency {
-    font-size: 12px;
-    color: var(--grey-text);
-    margin-left: 4px;
-  }
-  .add-btn {
-    background: transparent;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    padding: 10px 18px;
+  .product-price small {
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    border-radius: 2px;
-    transition: all 0.25s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    color: var(--cream-mute);
+    margin-left: 4px;
+    font-family: var(--sans);
   }
-  .add-btn:hover {
-    background: var(--gradient-gold);
-    color: var(--black);
-    border-color: transparent;
-  }
-  .add-btn.added {
-    background: var(--gradient-gold);
-    color: var(--black);
-    border-color: transparent;
+  .product-desc {
+    grid-column: 1 / -1;
+    font-size: 13px;
+    color: var(--cream-mute);
+    line-height: 1.6;
+    margin-top: 4px;
   }
 
-  /* ============ STORY SECTION ============ */
-  .story {
-    background:
-      radial-gradient(ellipse at 80% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
-      var(--black-soft);
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  /* SIGNATURE — featured product editorial */
+  .signature {
+    background: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
   }
-  .story-grid {
+  .signature-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
   }
-  .story h2 {
-    font-size: clamp(36px, 5vw, 56px);
-    line-height: 1.05;
-    margin-bottom: 28px;
+  .signature-stage {
+    position: relative;
+    aspect-ratio: 1;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(201, 164, 76, 0.16) 0%, transparent 55%),
+      linear-gradient(135deg, #1a1a22 0%, #0a0a0c 100%);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .story h2 .accent {
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .signature-stage::before {
+    content: '';
+    position: absolute;
+    inset: 24px;
+    border: 1px solid var(--line);
+  }
+  .signature-stage svg {
+    width: 50%;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 30px 50px rgba(0,0,0,0.6));
+  }
+  .signature-meta {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 3;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .signature-no {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    z-index: 3;
+    font-family: var(--serif);
     font-style: italic;
+    font-size: 32px;
+    color: var(--gold-warm);
   }
-  .story p {
-    color: var(--grey-text);
-    font-size: 16px;
-    margin-bottom: 20px;
-    line-height: 1.8;
-  }
-  .story-stats {
+
+  .signature-copy h2 { margin-bottom: 24px; }
+  .signature-copy .eyebrow { margin-bottom: 20px; }
+  .signature-notes {
+    margin: 32px 0;
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    margin-top: 40px;
-    padding-top: 40px;
-    border-top: 1px solid rgba(212, 175, 55, 0.15);
   }
-  .stat-num {
-    font-family: var(--serif);
-    font-size: 40px;
-    font-weight: 500;
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-  .stat-label {
-    font-size: 11px;
-    letter-spacing: 0.2em;
+  .note-label {
+    font-size: 10px;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--grey-mute);
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .note-content {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--cream);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  .signature-price {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .signature-price .num {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--gold-warm);
+    font-weight: 500;
+  }
+  .signature-price .lbl {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream-mute);
+  }
+
+  /* STORY */
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .story-copy h2 { margin-bottom: 28px; }
+  .story-copy p { color: var(--cream-mute); margin-bottom: 18px; }
+  .story-sigs {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .sig-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-style: italic;
+    color: var(--gold-warm);
+    line-height: 1;
+  }
+  .sig-role {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream-mute);
+    margin-top: 6px;
   }
 
   .story-visual {
     position: relative;
     aspect-ratio: 4/5;
-    border-radius: 4px;
-    overflow: hidden;
     background:
-      radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.4) 0%, transparent 50%),
-      linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
+      radial-gradient(circle at 30% 30%, rgba(201, 164, 76, 0.20) 0%, transparent 60%),
+      linear-gradient(140deg, #1a1a22 0%, #0a0a0c 100%);
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .story-visual::before {
+    content: '';
+    position: absolute;
+    inset: 28px;
+    border: 1px solid var(--line);
+    pointer-events: none;
   }
   .story-emblem {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 40px;
   }
-  .story-emblem svg { width: 200px; height: 200px; margin: 0 auto 20px; }
-  .story-emblem h3 {
-    font-size: 28px;
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 8px;
-  }
-  .story-emblem .sisters {
-    font-size: 12px;
-    letter-spacing: 0.3em;
-    color: var(--gold-soft);
+  .story-emblem svg { width: 220px; height: 220px; margin-bottom: 24px; }
+  .story-emblem .est {
+    font-size: 10px;
+    letter-spacing: 0.36em;
     text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .story-emblem h3 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 32px;
+    color: var(--cream);
+    line-height: 1.3;
+    max-width: 320px;
+  }
+  .story-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 40px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .story-stat {
+    padding: 22px 16px;
+    text-align: center;
+    border-right: 1px solid var(--line);
+  }
+  .story-stat:last-child { border-right: none; }
+  .story-stat .num {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--gold-warm);
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .story-stat .lbl {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream-mute);
   }
 
-  /* ============ FEATURES ============ */
-  .features {
-    background: var(--black);
-  }
-  .features-grid {
+  /* TESTIMONIALS */
+  .testimonials { background: var(--ink-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .testi-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
   }
-  .feature {
-    text-align: center;
-    padding: 36px 24px;
-    background: linear-gradient(160deg, var(--black-elev) 0%, var(--black-soft) 100%);
-    border: 1px solid rgba(212, 175, 55, 0.12);
-    border-radius: 4px;
-    transition: all 0.3s ease;
+  .testi {
+    background: var(--ink);
+    border: 1px solid var(--line);
+    padding: 36px 32px;
+    transition: border-color 0.3s var(--ease);
   }
-  .feature:hover {
-    border-color: rgba(212, 175, 55, 0.35);
-    transform: translateY(-4px);
+  .testi:hover { border-color: var(--line-strong); }
+  .testi-stars {
+    display: flex;
+    gap: 2px;
+    color: var(--gold);
+    margin-bottom: 18px;
   }
-  .feature-icon {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 20px;
+  .testi-stars svg { width: 14px; height: 14px; }
+  .testi-quote {
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--cream);
+    margin-bottom: 24px;
+    font-weight: 400;
+  }
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .testi-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-deep), var(--gold-warm));
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(212, 175, 55, 0.1);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 50%;
-    color: var(--gold);
-  }
-  .feature h4 {
-    font-size: 20px;
-    margin-bottom: 8px;
-  }
-  .feature p {
+    font-family: var(--serif);
     font-size: 14px;
-    color: var(--grey-text);
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .testi-name {
+    font-size: 14px;
+    color: var(--cream);
+    font-weight: 500;
+  }
+  .testi-loc {
+    font-size: 11px;
+    color: var(--cream-mute);
+    letter-spacing: 0.12em;
   }
 
-  /* ============ NEWSLETTER ============ */
-  .newsletter {
-    background:
-      radial-gradient(ellipse at center, rgba(212, 175, 55, 0.12) 0%, transparent 70%),
-      var(--black-soft);
+  /* NEWSLETTER */
+  .news {
+    background: var(--ink);
     text-align: center;
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    position: relative;
+    overflow: hidden;
   }
-  .newsletter h2 {
-    font-size: clamp(36px, 5vw, 52px);
-    margin-bottom: 16px;
+  .news::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201,164,76,0.10) 0%, transparent 60%);
+    pointer-events: none;
   }
-  .newsletter p { color: var(--grey-text); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .news .wrap { position: relative; z-index: 2; }
+  .news h2 { margin-bottom: 16px; }
+  .news .lead { max-width: 480px; margin: 0 auto 36px; }
   .news-form {
     display: flex;
-    max-width: 500px;
+    max-width: 480px;
     margin: 0 auto;
     gap: 8px;
   }
   .news-form input {
     flex: 1;
-    background: var(--black);
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: transparent;
+    border: 1px solid var(--line-strong);
     color: var(--cream);
     padding: 16px 20px;
     font-family: var(--sans);
     font-size: 14px;
-    border-radius: 2px;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s var(--ease);
   }
+  .news-form input::placeholder { color: var(--cream-mute); }
   .news-form input:focus { outline: none; border-color: var(--gold); }
-
-  /* ============ FOOTER ============ */
-  footer {
-    background: var(--black);
-    border-top: 1px solid rgba(212, 175, 55, 0.15);
-    padding: 80px 28px 30px;
+  .news-fine {
+    margin-top: 18px;
+    font-size: 11px;
+    color: var(--cream-mute);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
   }
-  .footer-grid {
-    max-width: 1400px;
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid var(--line);
+    padding: 80px 0 32px;
+  }
+  .foot-grid {
+    max-width: var(--max);
     margin: 0 auto;
+    padding: 0 32px;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 60px;
     margin-bottom: 60px;
   }
-  .footer-brand .logo { text-align: left; margin-bottom: 20px; }
-  .footer-brand p { color: var(--grey-text); font-size: 14px; max-width: 320px; line-height: 1.7; }
-  .footer-col h5 {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.25em;
+  .foot-brand .mark { font-size: 32px; }
+  .foot-brand p {
+    color: var(--cream-mute);
+    font-size: 14px;
+    max-width: 320px;
+    margin-top: 24px;
+    line-height: 1.7;
+  }
+  .foot-social { display: flex; gap: 10px; margin-top: 28px; }
+  .foot-social a {
+    width: 38px; height: 38px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cream-mute);
+    transition: all 0.25s var(--ease);
+  }
+  .foot-social a:hover { color: var(--gold); border-color: var(--line-strong); }
+  .foot-social svg { width: 16px; height: 16px; stroke-width: 1.4; }
+
+  .foot-col h5 {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 20px;
-    font-family: var(--sans);
+    margin-bottom: 22px;
+    font-weight: 500;
   }
-  .footer-col a {
+  .foot-col a {
     display: block;
     font-size: 14px;
-    color: var(--grey-text);
-    padding: 6px 0;
-    transition: color 0.2s ease;
+    color: var(--cream-mute);
+    padding: 7px 0;
+    transition: color 0.2s var(--ease);
   }
-  .footer-col a:hover { color: var(--gold); }
-  .footer-bottom {
-    max-width: 1400px;
+  .foot-col a:hover { color: var(--gold-warm); }
+
+  .foot-bottom {
+    max-width: var(--max);
     margin: 0 auto;
-    padding-top: 30px;
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 28px 32px 0;
+    border-top: 1px solid var(--line);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 20px;
     font-size: 12px;
-    color: var(--grey-mute);
-    letter-spacing: 0.1em;
+    color: var(--cream-mute);
+    letter-spacing: 0.06em;
   }
-  .pay-icons { display: flex; gap: 12px; align-items: center; }
-  .pay-icon {
-    background: var(--black-elev);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+  .foot-pay { display: flex; gap: 8px; align-items: center; }
+  .foot-pay span {
+    border: 1px solid var(--line);
     padding: 6px 12px;
-    border-radius: 3px;
     font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: var(--gold-soft);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--cream-mute);
   }
 
-  /* ============ WHATSAPP FLOAT ============ */
-  .whatsapp-float {
+  /* WHATSAPP FLOAT */
+  .wa-float {
     position: fixed;
-    bottom: 24px;
-    right: 24px;
-    width: 60px;
-    height: 60px;
+    bottom: 28px;
+    right: 28px;
+    width: 56px;
+    height: 56px;
     background: #25d366;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
-    z-index: 99;
-    transition: all 0.3s ease;
-    animation: bounce 3s ease-in-out infinite;
+    box-shadow: 0 10px 28px rgba(37,211,102,0.4);
+    z-index: 90;
+    transition: all 0.3s var(--ease);
   }
-  .whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
-  }
-  .whatsapp-float svg { width: 32px; height: 32px; color: white; }
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-  }
-  .whatsapp-tip {
-    position: absolute;
-    right: 72px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--black-elev);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    padding: 8px 14px;
-    border-radius: 4px;
-    font-size: 12px;
-    color: var(--cream);
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-  }
-  .whatsapp-float:hover .whatsapp-tip { opacity: 1; }
+  .wa-float:hover { transform: scale(1.06); }
+  .wa-float svg { width: 28px; height: 28px; color: white; }
 
-  /* ============ CART DRAWER ============ */
+  /* CART DRAWER */
   .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(4px);
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
     z-index: 200;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s var(--ease);
   }
   .overlay.show { opacity: 1; pointer-events: all; }
 
   .cart-drawer {
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 0; right: 0;
     height: 100vh;
-    width: 480px;
+    width: 460px;
     max-width: 100vw;
-    background: var(--black-soft);
-    border-left: 1px solid rgba(212, 175, 55, 0.2);
+    background: var(--ink-soft);
+    border-left: 1px solid var(--line);
     z-index: 300;
     display: flex;
     flex-direction: column;
     transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.45s var(--ease);
   }
   .cart-drawer.show { transform: translateX(0); }
-
   .cart-head {
-    padding: 24px;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 26px 28px;
+    border-bottom: 1px solid var(--line);
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .cart-head h3 {
-    font-size: 22px;
-    letter-spacing: 0.05em;
-  }
-  .cart-close {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s ease;
-  }
-  .cart-close:hover { background: rgba(212, 175, 55, 0.1); color: var(--gold); }
-
-  .cart-body {
-    flex: 1;
-    overflow-y: auto;
-    padding: 24px;
-  }
-  .cart-body::-webkit-scrollbar { width: 6px; }
-  .cart-body::-webkit-scrollbar-track { background: transparent; }
-  .cart-body::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.3); border-radius: 3px; }
+  .cart-head h3 { font-size: 22px; font-weight: 400; letter-spacing: 0.04em; }
+  .cart-body { flex: 1; overflow-y: auto; padding: 8px 28px; }
+  .cart-body::-webkit-scrollbar { width: 4px; }
+  .cart-body::-webkit-scrollbar-thumb { background: var(--line-strong); }
 
   .cart-item {
     display: grid;
     grid-template-columns: 80px 1fr auto;
     gap: 16px;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: flex-start;
   }
   .cart-item-img {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(180deg, #1c1c1c 0%, #0f0f0f 100%);
-    border: 1px solid rgba(212, 175, 55, 0.15);
-    border-radius: 4px;
+    width: 80px; height: 100px;
+    background: var(--ink);
+    border: 1px solid var(--line);
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
   }
-  .cart-item-img svg { width: 70%; height: 80%; }
-  .cart-item-info h4 {
-    font-size: 16px;
-    margin-bottom: 4px;
-  }
-  .cart-item-info .meta {
-    font-size: 11px;
-    color: var(--grey-mute);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .cart-item-info .price {
-    color: var(--gold);
-    font-family: var(--serif);
-    font-size: 18px;
-  }
+  .cart-item-img svg { width: 60%; }
+  .cart-item-info h4 { font-family: var(--serif); font-size: 17px; font-weight: 500; margin-bottom: 4px; }
+  .cart-item-info .meta { font-size: 10px; color: var(--cream-mute); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 12px; }
+  .cart-item-info .price { color: var(--gold-warm); font-family: var(--serif); font-size: 17px; }
   .qty-control {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    background: var(--black);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 2px;
-    margin-top: 8px;
-    width: fit-content;
+    border: 1px solid var(--line);
+    margin-top: 10px;
   }
   .qty-btn {
-    width: 28px;
-    height: 28px;
-    color: var(--gold);
-    font-size: 16px;
-    transition: background 0.15s ease;
+    width: 28px; height: 28px;
+    color: var(--cream-mute);
+    font-size: 14px;
+    transition: all 0.2s var(--ease);
   }
-  .qty-btn:hover { background: rgba(212, 175, 55, 0.1); }
-  .qty-val {
-    min-width: 32px;
-    text-align: center;
-    font-size: 13px;
-    font-weight: 500;
-  }
-  .cart-item-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
-  }
-  .remove-btn {
-    color: var(--grey-mute);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition: color 0.2s ease;
-  }
+  .qty-btn:hover { color: var(--gold); }
+  .qty-val { min-width: 28px; text-align: center; font-size: 12px; }
+  .cart-item-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+  .cart-item-total { font-family: var(--serif); font-size: 17px; color: var(--gold-warm); }
+  .remove-btn { color: var(--cream-mute); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; transition: color 0.2s; }
   .remove-btn:hover { color: var(--gold); }
 
-  .cart-empty {
-    text-align: center;
-    padding: 80px 24px;
-    color: var(--grey-text);
-  }
-  .cart-empty svg { color: var(--gold); width: 60px; height: 60px; margin-bottom: 20px; opacity: 0.4; }
-  .cart-empty h4 { font-size: 22px; margin-bottom: 10px; color: var(--cream); }
+  .cart-empty { text-align: center; padding: 80px 20px; color: var(--cream-mute); }
+  .cart-empty svg { width: 50px; height: 50px; color: var(--gold); margin-bottom: 24px; opacity: 0.5; }
+  .cart-empty h4 { font-family: var(--serif); font-size: 22px; color: var(--cream); margin-bottom: 8px; font-weight: 400; }
 
   .cart-foot {
-    padding: 24px;
-    border-top: 1px solid rgba(212, 175, 55, 0.15);
-    background: var(--black);
+    padding: 24px 28px;
+    border-top: 1px solid var(--line);
+    background: var(--ink);
   }
+  .ship-msg {
+    background: rgba(201, 164, 76, 0.05);
+    border: 1px solid var(--line);
+    color: var(--cream);
+    padding: 12px 14px;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .ship-msg strong { color: var(--gold-warm); }
+  .progress-bar { height: 2px; background: var(--ink-soft); margin-top: 10px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--gold); transition: width 0.5s var(--ease); }
+
   .cart-line {
     display: flex;
     justify-content: space-between;
-    padding: 8px 0;
-    font-size: 14px;
-    color: var(--grey-text);
+    padding: 5px 0;
+    font-size: 13px;
+    color: var(--cream-mute);
   }
   .cart-line.total {
-    font-size: 18px;
+    margin-top: 12px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
     color: var(--cream);
-    border-top: 1px solid rgba(212, 175, 55, 0.15);
-    padding-top: 16px;
-    margin-top: 8px;
-    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
-  .cart-line.total .amount {
-    font-family: var(--serif);
-    font-size: 24px;
-    color: var(--gold);
-  }
-  .ship-msg {
-    background: rgba(212, 175, 55, 0.08);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    color: var(--gold-soft);
-    padding: 12px;
-    border-radius: 2px;
-    font-size: 12px;
-    text-align: center;
-    margin: 12px 0;
-    letter-spacing: 0.05em;
-  }
-  .progress-bar {
-    height: 4px;
-    background: var(--black-elev);
-    border-radius: 2px;
-    overflow: hidden;
-    margin-top: 8px;
-  }
-  .progress-fill {
-    height: 100%;
-    background: var(--gradient-gold);
-    transition: width 0.4s ease;
-  }
+  .cart-line.total .amount { font-family: var(--serif); font-size: 24px; color: var(--gold-warm); text-transform: none; letter-spacing: 0; }
   .pay-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin-top: 12px;
+    gap: 6px;
+    margin-top: 10px;
   }
   .pay-quick {
-    padding: 12px 8px;
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    border-radius: 2px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    transition: all 0.2s ease;
-    background: var(--black);
-    color: var(--cream);
+    padding: 11px 6px;
+    border: 1px solid var(--line);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    transition: all 0.2s var(--ease);
+    color: var(--cream-mute);
   }
   .pay-quick:hover { border-color: var(--gold); color: var(--gold); }
 
-  /* ============ CHECKOUT MODAL ============ */
+  /* CHECKOUT MODAL */
   .modal {
     position: fixed;
     inset: 0;
@@ -1016,34 +1118,27 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
   }
   .modal.show { display: flex; }
   .modal-content {
-    background: var(--black-soft);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 6px;
-    max-width: 600px;
+    background: var(--ink-soft);
+    border: 1px solid var(--line);
     width: 100%;
+    max-width: 600px;
     max-height: 90vh;
     overflow-y: auto;
-    padding: 40px;
+    padding: 44px;
     position: relative;
-    box-shadow: var(--shadow-deep);
   }
   .modal-close {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+    top: 20px; right: 20px;
   }
-  .modal-close:hover { background: rgba(212, 175, 55, 0.1); color: var(--gold); }
-  .checkout-step h3 {
-    font-size: 28px;
-    margin-bottom: 8px;
-  }
-  .checkout-step .sub { color: var(--grey-text); font-size: 14px; margin-bottom: 28px; }
+  .checkout-step h3 { font-size: 28px; font-weight: 400; margin-bottom: 8px; }
+  .checkout-step .sub { color: var(--cream-mute); font-size: 14px; margin-bottom: 28px; }
+
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1053,565 +1148,547 @@
   .form-field { margin-bottom: 12px; }
   .form-field label {
     display: block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--gold-soft);
-    margin-bottom: 6px;
+    color: var(--gold);
+    margin-bottom: 8px;
   }
   .form-field input, .form-field select {
     width: 100%;
-    background: var(--black);
-    border: 1px solid rgba(212, 175, 55, 0.25);
+    background: var(--ink);
+    border: 1px solid var(--line);
     color: var(--cream);
-    padding: 12px 14px;
+    padding: 13px 14px;
     font-family: var(--sans);
     font-size: 14px;
-    border-radius: 2px;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s var(--ease);
   }
   .form-field input:focus, .form-field select:focus { outline: none; border-color: var(--gold); }
 
   .order-summary {
-    background: var(--black);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 4px;
-    padding: 20px;
-    margin: 20px 0;
+    background: var(--ink);
+    border: 1px solid var(--line);
+    padding: 22px;
+    margin: 24px 0;
   }
-  .summary-line {
-    display: flex;
-    justify-content: space-between;
-    padding: 6px 0;
-    font-size: 13px;
-    color: var(--grey-text);
-  }
+  .summary-line { display: flex; justify-content: space-between; padding: 5px 0; font-size: 13px; color: var(--cream-mute); }
   .summary-line.total {
-    font-size: 16px;
-    color: var(--cream);
-    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    margin-top: 10px;
     padding-top: 12px;
-    margin-top: 8px;
-    font-weight: 600;
+    border-top: 1px solid var(--line);
+    color: var(--cream);
+    font-weight: 500;
   }
-  .summary-line.total .v { color: var(--gold); font-family: var(--serif); font-size: 22px; }
+  .summary-line.total .v { font-family: var(--serif); font-size: 22px; color: var(--gold-warm); font-weight: 500; }
 
   .success-icon {
-    width: 80px;
-    height: 80px;
+    width: 72px; height: 72px;
     margin: 0 auto 24px;
-    background: var(--gradient-gold);
+    border: 1px solid var(--gold);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--black);
+    color: var(--gold);
     animation: pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  @keyframes pop {
-    0% { transform: scale(0); }
-    100% { transform: scale(1); }
-  }
+  @keyframes pop { 0% { transform: scale(0); } 100% { transform: scale(1); } }
   .success-text { text-align: center; }
-  .success-text h3 { font-size: 32px; margin-bottom: 12px; }
-  .success-text p { color: var(--grey-text); margin-bottom: 8px; }
-  .order-num { font-family: var(--serif); color: var(--gold); font-size: 20px; margin: 16px 0; }
+  .success-text h3 { font-size: 32px; font-weight: 400; margin-bottom: 12px; font-style: italic; }
+  .success-text p { color: var(--cream-mute); margin-bottom: 8px; }
+  .order-num {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--gold-warm);
+    font-size: 20px;
+    margin: 16px 0;
+  }
 
-  /* ============ TOAST ============ */
+  /* TOAST */
   .toast {
     position: fixed;
-    bottom: 30px;
+    bottom: 32px;
     left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    background: var(--black-elev);
+    transform: translateX(-50%) translateY(120px);
+    background: var(--ink-soft);
     border: 1px solid var(--gold);
-    border-radius: 4px;
-    padding: 14px 24px;
+    padding: 14px 22px;
     color: var(--cream);
-    font-size: 14px;
-    font-weight: 500;
-    box-shadow: var(--shadow-deep);
+    font-size: 13px;
     z-index: 500;
     display: flex;
     align-items: center;
     gap: 12px;
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
   }
   .toast.show { transform: translateX(-50%) translateY(0); }
-  .toast svg { color: var(--gold); width: 20px; height: 20px; }
+  .toast svg { color: var(--gold); width: 18px; height: 18px; }
 
-  /* ============ MOBILE ============ */
-  @media (max-width: 900px) {
-    .nav-left, .nav-right .nav-link { display: none; }
-    .nav-wrap { grid-template-columns: auto 1fr auto; }
-    .menu-btn { display: flex; }
-    .hero { height: auto; min-height: auto; padding: 60px 0 30px; }
-    .hero-content { grid-template-columns: 1fr; gap: 30px; padding-top: 40px; }
-    .hero-visual { height: 360px; order: -1; }
-    .hero-bottle.b1 { transform: translate(-60px, -10px) rotate(-6deg) scale(0.7); }
-    .hero-bottle.b2 { transform: translate(0, 10px) scale(0.7); }
-    .hero-bottle.b3 { transform: translate(60px, -20px) rotate(6deg) scale(0.7); }
-    .hero-glow { width: 320px; height: 320px; }
-    section { padding: 60px 20px; }
-    .nav-wrap { padding: 14px 20px; }
-    .story-grid { grid-template-columns: 1fr; gap: 40px; }
-    .story-stats { grid-template-columns: 1fr; gap: 20px; padding-top: 24px; }
-    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-    .form-row { grid-template-columns: 1fr; }
-    .modal-content { padding: 28px 20px; }
-    .news-form { flex-direction: column; }
-    .product-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-    .product-info { padding: 18px; }
-    .product-name { font-size: 18px; }
-    .product-price { font-size: 18px; }
-    .add-btn { padding: 8px 12px; font-size: 10px; }
-    .cart-drawer { width: 100%; }
-    .marquee-track { font-size: 18px; gap: 40px; }
-  }
-
-  @media (max-width: 480px) {
-    .product-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-    .product-info { padding: 14px; }
-    .product-name { font-size: 16px; }
-    .product-desc { display: none; }
-    .product-meta { font-size: 9px; }
-    .product-price { font-size: 16px; }
-    .product-bottom { flex-direction: column; align-items: stretch; gap: 8px; }
-    .add-btn { justify-content: center; padding: 8px; font-size: 10px; }
-  }
-
-  /* mobile menu */
+  /* MOBILE MENU */
   .mobile-menu {
     position: fixed;
     inset: 0;
-    background: var(--black);
+    background: var(--ink);
     z-index: 400;
     transform: translateX(100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s var(--ease);
     display: flex;
     flex-direction: column;
-    padding: 24px;
+    padding: 28px;
   }
   .mobile-menu.show { transform: translateX(0); }
   .mobile-menu-head {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 28px;
   }
   .mobile-menu a {
-    padding: 18px 0;
-    font-size: 18px;
+    padding: 22px 0;
     font-family: var(--serif);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+    font-size: 22px;
+    border-bottom: 1px solid var(--line);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--cream);
   }
-  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-menu a span { color: var(--gold); font-size: 14px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .product-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .strip-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .strip-cell:nth-child(2) { border-right: none; padding-right: 0; }
+    .signature-grid, .story-grid, .hero-grid { gap: 56px; }
+  }
+
+  @media (max-width: 800px) {
+    .nav-left, .nav-right .nav-link { display: none; }
+    .nav { grid-template-columns: auto 1fr auto; padding: 16px 20px; }
+    .menu-btn { display: flex; }
+    .wrap, .nav, .hero-grid, .foot-grid, .foot-bottom, .strip-inner { padding-left: 20px; padding-right: 20px; }
+    .hero { min-height: auto; padding: 40px 0 30px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-stage { order: -1; max-width: 320px; margin: 0 auto; }
+    .hero-meta { gap: 24px; }
+    .hero-tag, .hero-tag-2 { display: none; }
+    section { padding: 70px 0; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .product-info { padding: 16px 4px 4px; }
+    .product-name { font-size: 18px; }
+    .product-price { font-size: 16px; }
+    .product-desc { display: none; }
+    .signature-grid, .story-grid { grid-template-columns: 1fr; gap: 40px; }
+    .signature-notes { gap: 16px; }
+    .testi-grid { grid-template-columns: 1fr; gap: 20px; }
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    .foot-brand { grid-column: 1 / -1; }
+    .strip-inner { grid-template-columns: 1fr 1fr; padding: 22px 20px; gap: 18px; }
+    .strip-cell { border-right: none; padding-right: 0; }
+    .modal-content { padding: 28px 22px; }
+    .news-form { flex-direction: column; }
+    .cart-drawer { width: 100%; }
+    .section-bar { flex-direction: column; align-items: flex-start; gap: 24px; }
+  }
+
+  @media (max-width: 480px) {
+    .display { font-size: 44px; }
+    .product-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .product-info { padding: 14px 2px 2px; }
+    .product-name { font-size: 16px; }
+    .product-meta { font-size: 9px; letter-spacing: 0.2em; }
+    .strip-inner { grid-template-columns: 1fr; }
+  }
+
 </style>
 </head>
 <body>
 
-<!-- ============ ANNOUNCEMENT ============ -->
-<div class="announce">✦ Free Canada-wide shipping over $150 CAD ✦ Imported from Dubai · Made in Canada ✦</div>
+<!-- ANNOUNCE -->
+<div class="announce">
+  Free Canada-wide shipping over $150 <span>·</span> Imported Dubai <span>·</span> Crafted in Surrey BC
+</div>
 
-<!-- ============ HEADER ============ -->
-<header>
-  <div class="nav-wrap">
+<!-- HEADER -->
+<header id="siteHeader">
+  <div class="nav">
     <div class="nav-left">
-      <a href="#shop" class="nav-link">Shop</a>
-      <a href="#perfumes" class="nav-link">Perfumes</a>
-      <a href="#story" class="nav-link">Our Story</a>
+      <a href="#collection" class="nav-link">Collection</a>
+      <a href="#signature" class="nav-link">Signature</a>
+      <a href="#story" class="nav-link">Atelier</a>
       <a href="#contact" class="nav-link">Contact</a>
     </div>
-    <a href="#" class="logo">3SSS<span class="logo-sub">Sister Elite Luxe</span></a>
+    <a href="#" class="logo">
+      <span class="mark">3SSS</span>
+      <span class="sub">SISTER ELITE LUXE</span>
+    </a>
     <div class="nav-right">
-      <a href="#" class="nav-link" style="display:none">Account</a>
       <button class="icon-btn" aria-label="Search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       </button>
       <button class="icon-btn" aria-label="Account">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </button>
       <button class="icon-btn cart-trigger" aria-label="Cart" onclick="toggleCart()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         <span class="cart-count" id="cartCount">0</span>
       </button>
       <button class="icon-btn menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
       </button>
     </div>
   </div>
 </header>
 
-<!-- ============ MOBILE MENU ============ -->
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-head">
-    <a href="#" class="logo">3SSS<span class="logo-sub">Sister Elite Luxe</span></a>
+    <a href="#" class="logo"><span class="mark">3SSS</span><span class="sub">SISTER ELITE LUXE</span></a>
     <button class="icon-btn" onclick="toggleMobileMenu()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
   </div>
-  <a href="#shop" onclick="toggleMobileMenu()">Shop All <span style="color:var(--gold)">→</span></a>
-  <a href="#perfumes" onclick="toggleMobileMenu()">Luxury Perfumes <span style="color:var(--gold)">→</span></a>
-  <a href="#story" onclick="toggleMobileMenu()">Our Story <span style="color:var(--gold)">→</span></a>
-  <a href="#contact" onclick="toggleMobileMenu()">Contact <span style="color:var(--gold)">→</span></a>
+  <a href="#collection" onclick="toggleMobileMenu()">Collection <span>→</span></a>
+  <a href="#signature" onclick="toggleMobileMenu()">Signature <span>→</span></a>
+  <a href="#story" onclick="toggleMobileMenu()">Atelier <span>→</span></a>
+  <a href="#contact" onclick="toggleMobileMenu()">Contact <span>→</span></a>
 </div>
 
-<!-- ============ HERO ============ -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <div>
-      <div class="hero-tagline">Imported from Dubai · Crafted in Canada</div>
-      <h1>Where Sisterhood<br>Meets <span class="accent">Elegance</span></h1>
-      <p>A curated collection of luxury perfumes, premium skincare, and exclusive gift sets — handpicked by three sisters in Surrey, BC for the woman who chooses excellence.</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">Maison 3SSS · Est. 2026</div>
+      <h1 class="display">An <em>Heirloom</em><br>of Scent.</h1>
+      <p class="lead">Eight signature fragrances, imported from the souks of Dubai. Premium skincare, blended in our Surrey atelier. A house built by three sisters — for the woman who wears her own legacy.</p>
       <div class="hero-cta">
-        <a href="#perfumes" class="btn btn-primary">
-          Discover Collection
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <a href="#collection" class="btn btn-primary">
+          Explore the Collection
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#story" class="btn btn-ghost">Our Story</a>
       </div>
+      <div class="hero-meta">
+        <div><strong>8</strong>Signature Scents</div>
+        <div><strong>Dubai</strong>Direct Import</div>
+        <div><strong>BC</strong>Atelier Made</div>
+      </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-glow"></div>
-      <!-- Bottles using inline SVG -->
-      <div class="hero-bottle b1">
-        <svg width="160" height="280" viewBox="0 0 160 280" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#3a2810"/>
-              <stop offset="50%" stop-color="#1a1208"/>
-              <stop offset="100%" stop-color="#0a0604"/>
-            </linearGradient>
-            <linearGradient id="cap1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#b8860b"/>
-              <stop offset="50%" stop-color="#f4d03f"/>
-              <stop offset="100%" stop-color="#b8860b"/>
-            </linearGradient>
-          </defs>
-          <rect x="60" y="20" width="40" height="40" rx="3" fill="url(#cap1)"/>
-          <rect x="65" y="55" width="30" height="15" fill="#0a0a0a"/>
-          <rect x="35" y="70" width="90" height="180" rx="6" fill="url(#bg1)" stroke="#d4af37" stroke-width="1"/>
-          <rect x="45" y="120" width="70" height="80" fill="rgba(212,175,55,0.05)" stroke="#d4af37" stroke-width="0.5"/>
-          <text x="80" y="155" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="14" font-style="italic" font-weight="500">3SSS</text>
-          <text x="80" y="172" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="7" letter-spacing="1.5">ROYAL OUD</text>
-          <line x1="55" y1="180" x2="105" y2="180" stroke="#d4af37" stroke-width="0.3"/>
-          <text x="80" y="195" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="6" letter-spacing="1">DUBAI</text>
-        </svg>
+    <div class="hero-stage">
+      <div class="hero-tag">No. 01 · Royal Oud</div>
+      <div class="hero-tag-2">
+        <span class="price">$185</span>
+        <span class="lbl">Eau de Parfum · 50ml</span>
       </div>
-      <div class="hero-bottle b2">
-        <svg width="180" height="320" viewBox="0 0 180 320" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#5d4220"/>
-              <stop offset="50%" stop-color="#2a1d0a"/>
-              <stop offset="100%" stop-color="#0d0904"/>
-            </linearGradient>
-            <linearGradient id="cap2" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#d4af37"/>
-              <stop offset="50%" stop-color="#f4d03f"/>
-              <stop offset="100%" stop-color="#b8860b"/>
-            </linearGradient>
-          </defs>
-          <ellipse cx="90" cy="35" rx="28" ry="22" fill="url(#cap2)"/>
-          <rect x="75" y="50" width="30" height="18" fill="#0a0a0a"/>
-          <path d="M30 70 Q30 60 40 60 L140 60 Q150 60 150 70 L150 280 Q150 295 135 295 L45 295 Q30 295 30 280 Z" fill="url(#bg2)" stroke="#d4af37" stroke-width="1.5"/>
-          <rect x="48" y="130" width="84" height="100" fill="rgba(212,175,55,0.06)" stroke="#d4af37" stroke-width="0.5"/>
-          <text x="90" y="170" text-anchor="middle" fill="#f4d03f" font-family="serif" font-size="20" font-style="italic" font-weight="600">3SSS</text>
-          <text x="90" y="190" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="9" letter-spacing="2">SISTER ELITE</text>
-          <text x="90" y="205" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="9" letter-spacing="2">LUXE</text>
-          <line x1="60" y1="215" x2="120" y2="215" stroke="#d4af37" stroke-width="0.3"/>
-          <text x="90" y="228" text-anchor="middle" fill="#e8c97c" font-family="serif" font-size="6" letter-spacing="1.5">SIGNATURE NO.1</text>
-        </svg>
-      </div>
-      <div class="hero-bottle b3">
-        <svg width="160" height="280" viewBox="0 0 160 280" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#7a5618"/>
-              <stop offset="50%" stop-color="#3a280c"/>
-              <stop offset="100%" stop-color="#0d0805"/>
-            </linearGradient>
-            <linearGradient id="cap3" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#b8860b"/>
-              <stop offset="50%" stop-color="#e8c97c"/>
-              <stop offset="100%" stop-color="#b8860b"/>
-            </linearGradient>
-          </defs>
-          <polygon points="60,15 100,15 95,55 65,55" fill="url(#cap3)"/>
-          <rect x="65" y="55" width="30" height="15" fill="#0a0a0a"/>
-          <path d="M40 70 L120 70 L120 250 Q120 260 110 260 L50 260 Q40 260 40 250 Z" fill="url(#bg3)" stroke="#d4af37" stroke-width="1"/>
-          <rect x="50" y="120" width="60" height="80" fill="rgba(212,175,55,0.05)" stroke="#d4af37" stroke-width="0.5"/>
-          <text x="80" y="155" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="13" font-style="italic" font-weight="500">3SSS</text>
-          <text x="80" y="172" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="6" letter-spacing="1.2">AMBER NOIR</text>
-          <line x1="55" y1="182" x2="105" y2="182" stroke="#d4af37" stroke-width="0.3"/>
-          <text x="80" y="195" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="6" letter-spacing="1">EAU DE PARFUM</text>
-        </svg>
-      </div>
+      <div class="hero-bottle-svg" id="heroBottle"></div>
     </div>
   </div>
 </section>
 
-<!-- ============ MARQUEE ============ -->
-<div class="marquee">
-  <div class="marquee-track">
-    <span>Royal Oud</span><span>Desert Rose</span><span>Amber Noir</span><span>Saffron Mist</span><span>Velvet Musk</span><span>Bakhoor Elite</span><span>Golden Sands</span><span>Royal Oud</span><span>Desert Rose</span><span>Amber Noir</span><span>Saffron Mist</span><span>Velvet Musk</span><span>Bakhoor Elite</span><span>Golden Sands</span>
+<!-- BRAND STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-cell">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/></svg>
+      <div>
+        <div class="ttl">Authentic Imports</div>
+        <div class="sub">Direct from Dubai houses</div>
+      </div>
+    </div>
+    <div class="strip-cell">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      <div>
+        <div class="ttl">Health Canada Compliant</div>
+        <div class="sub">Every skincare product certified</div>
+      </div>
+    </div>
+    <div class="strip-cell">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      <div>
+        <div class="ttl">Free Canadian Shipping</div>
+        <div class="sub">On orders over $150 CAD</div>
+      </div>
+    </div>
+    <div class="strip-cell">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <div>
+        <div class="ttl">Secure Checkout</div>
+        <div class="sub">Apple Pay · Google Pay · Shop Pay</div>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- ============ PERFUMES ============ -->
-<section id="perfumes">
-  <div class="section-wrap">
-    <div class="section-head">
-      <div class="section-eyebrow">The Collection</div>
-      <h2 class="section-title">Luxury <span class="accent">Perfumes</span></h2>
-      <p class="section-sub">Eight signature scents, each handpicked from Dubai's most prestigious houses. Long-lasting. Unforgettable.</p>
-    </div>
-
-    <div class="filter-bar" id="filterBar">
-      <button class="filter-chip active" data-filter="all">All</button>
-      <button class="filter-chip" data-filter="oud">Oud</button>
-      <button class="filter-chip" data-filter="floral">Floral</button>
-      <button class="filter-chip" data-filter="oriental">Oriental</button>
-      <button class="filter-chip" data-filter="musk">Musk</button>
-      <button class="filter-chip" data-filter="bestseller">Best Sellers</button>
-    </div>
-
-    <div class="product-grid" id="productGrid">
-      <!-- products populated by JS -->
+<!-- SIGNATURE -->
+<section class="signature" id="signature">
+  <div class="wrap">
+    <div class="signature-grid">
+      <div class="signature-stage">
+        <div class="signature-meta">No. 01</div>
+        <div class="signature-no">3SSS</div>
+        <div id="signatureBottle"></div>
+      </div>
+      <div class="signature-copy">
+        <div class="eyebrow">The House Signature</div>
+        <h2 class="h2">Royal <em>Oud</em>.</h2>
+        <p class="lead">A composition of aged Cambodian oud, Persian saffron, and Damask rose. Twelve hours of sillage. The fragrance our sisters return to.</p>
+        <div class="signature-notes">
+          <div>
+            <div class="note-label">Top</div>
+            <div class="note-content">Saffron<br>Bergamot</div>
+          </div>
+          <div>
+            <div class="note-label">Heart</div>
+            <div class="note-content">Damask Rose<br>Patchouli</div>
+          </div>
+          <div>
+            <div class="note-label">Base</div>
+            <div class="note-content">Aged Oud<br>Amber</div>
+          </div>
+        </div>
+        <div class="signature-price">
+          <span class="num">$185</span>
+          <span class="lbl">CAD · 50ml</span>
+        </div>
+        <button class="btn btn-primary" onclick="addToCart('royal-oud'); toggleCart();">
+          Add to Cart
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ STORY ============ -->
-<section class="story" id="story">
-  <div class="section-wrap">
+<!-- COLLECTION -->
+<section id="collection">
+  <div class="wrap">
+    <div class="section-bar">
+      <div class="head">
+        <div class="eyebrow">The Collection</div>
+        <h2 class="h2">Eight <em>Signatures</em>.</h2>
+        <p class="lead">Each scent hand-selected from Dubai's most celebrated houses. Long-lasting. Unforgettable.</p>
+      </div>
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-chip active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="oud">Oud</button>
+        <button class="filter-chip" data-filter="floral">Floral</button>
+        <button class="filter-chip" data-filter="oriental">Oriental</button>
+        <button class="filter-chip" data-filter="musk">Musk</button>
+      </div>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+  <div class="wrap">
     <div class="story-grid">
-      <div>
-        <div class="section-eyebrow">A Family Legacy</div>
-        <h2>Three Sisters,<br>One <span class="accent">Vision</span></h2>
-        <p>3SSS — Sumaya, Salam, and Saabiriin — three Somali-Canadian sisters who turned a shared love for Dubai's storied perfume tradition into a luxury brand for the modern woman.</p>
-        <p>Every fragrance in our collection is hand-selected from the souks of the Emirates. Every cream, balm, and oil is crafted in our own Surrey, BC studio under Health Canada compliance. Nothing leaves our hands without our name on it.</p>
+      <div class="story-copy">
+        <div class="eyebrow">The Atelier</div>
+        <h2 class="h2">Three Sisters.<br>One <em>Atelier</em>.</h2>
+        <p>3SSS is the work of Sumaya, Salam, and Saabiriin — three Somali-Canadian sisters who grew up in households where the morning ritual began with bakhoor and the air carried oud.</p>
+        <p>What began as gifts traded between three sisters became a house. Every fragrance is hand-selected from the souks of the Emirates. Every cream and balm is blended in our Surrey atelier under Health Canada compliance. Nothing leaves with our name unless it could leave with theirs.</p>
         <div class="story-stats">
+          <div class="story-stat">
+            <div class="num">3</div>
+            <div class="lbl">Sisters</div>
+          </div>
+          <div class="story-stat">
+            <div class="num">8</div>
+            <div class="lbl">Signatures</div>
+          </div>
+          <div class="story-stat">
+            <div class="num">100%</div>
+            <div class="lbl">Curated</div>
+          </div>
+        </div>
+        <div class="story-sigs">
           <div>
-            <div class="stat-num">3</div>
-            <div class="stat-label">Sisters</div>
+            <div class="sig-name">Sumaya</div>
+            <div class="sig-role">Creative Direction</div>
           </div>
           <div>
-            <div class="stat-num">8+</div>
-            <div class="stat-label">Signature Scents</div>
+            <div class="sig-name">Salam</div>
+            <div class="sig-role">Atelier Master</div>
           </div>
           <div>
-            <div class="stat-num">100%</div>
-            <div class="stat-label">Curated</div>
+            <div class="sig-name">Saabiriin</div>
+            <div class="sig-role">Sourcing &amp; Curation</div>
           </div>
         </div>
       </div>
       <div class="story-visual">
         <div class="story-emblem">
-          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="emblem" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#b8860b"/>
-                <stop offset="50%" stop-color="#f4d03f"/>
-                <stop offset="100%" stop-color="#b8860b"/>
-              </linearGradient>
-            </defs>
-            <circle cx="100" cy="100" r="92" fill="none" stroke="url(#emblem)" stroke-width="1.5"/>
-            <circle cx="100" cy="100" r="80" fill="none" stroke="url(#emblem)" stroke-width="0.5"/>
-            <text x="100" y="90" text-anchor="middle" fill="url(#emblem)" font-family="serif" font-size="48" font-weight="600" font-style="italic">3SSS</text>
-            <line x1="60" y1="105" x2="140" y2="105" stroke="url(#emblem)" stroke-width="0.5"/>
-            <text x="100" y="125" text-anchor="middle" fill="url(#emblem)" font-family="serif" font-size="9" letter-spacing="3">SISTER ELITE LUXE</text>
-            <text x="100" y="140" text-anchor="middle" fill="url(#emblem)" font-family="serif" font-size="7" letter-spacing="2">EST. 2026 · SURREY BC</text>
-            <text x="100" y="165" text-anchor="middle" fill="url(#emblem)" font-family="serif" font-size="14" letter-spacing="1">✦</text>
+          <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="110" cy="110" r="104" fill="none" stroke="#c9a44c" stroke-width="0.6" stroke-dasharray="2 4"/>
+            <circle cx="110" cy="110" r="92" fill="none" stroke="#c9a44c" stroke-width="0.8"/>
+            <circle cx="110" cy="110" r="78" fill="none" stroke="#c9a44c" stroke-width="0.4"/>
+            <text x="110" y="92" text-anchor="middle" fill="#d9b56a" font-family="Cormorant Garamond, serif" font-size="46" font-style="italic" font-weight="500">3SSS</text>
+            <line x1="78" y1="106" x2="142" y2="106" stroke="#c9a44c" stroke-width="0.5"/>
+            <text x="110" y="124" text-anchor="middle" fill="#c9a44c" font-family="Inter, sans-serif" font-size="7" letter-spacing="3.5">SISTER ELITE LUXE</text>
+            <text x="110" y="140" text-anchor="middle" fill="#c9a44c" font-family="Inter, sans-serif" font-size="6" letter-spacing="2.5">EST · 2026 · SURREY BC</text>
+            <text x="110" y="170" text-anchor="middle" fill="#c9a44c" font-family="serif" font-size="14">✦</text>
           </svg>
-          <h3>The 3SSS Mark</h3>
-          <div class="sisters">Sumaya · Salam · Saabiriin</div>
+          <div class="est">A Maison Mark · Surrey BC</div>
+          <h3>"For the woman who wears her own legacy."</h3>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ FEATURES ============ -->
-<section class="features">
-  <div class="section-wrap">
-    <div class="features-grid">
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/></svg>
-        </div>
-        <h4>Authentic Imports</h4>
-        <p>Direct from Dubai. Never diluted. Never substituted.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <h4>Health Canada Compliant</h4>
-        <p>Every skincare product meets Canadian labeling standards.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        </div>
-        <h4>Free Canadian Shipping</h4>
-        <p>Canada Post & UPS on orders over $150 CAD.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        </div>
-        <h4>Secure Checkout</h4>
-        <p>SSL encrypted. Apple Pay, Google Pay, Shop Pay.</p>
-      </div>
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">Words from the Inner Circle</div>
+      <h2 class="h2">Worn &amp; <em>Adored</em>.</h2>
     </div>
+    <div class="testi-grid" id="testiGrid"></div>
   </div>
 </section>
 
-<!-- ============ NEWSLETTER ============ -->
-<section class="newsletter">
-  <div class="section-wrap">
-    <div class="section-eyebrow">Inner Circle</div>
-    <h2>Be the First to <span style="background:var(--gradient-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-style:italic">Know</span></h2>
-    <p>New arrivals, private restocks, and 10% off your first order. We don't spam — we curate.</p>
+<!-- NEWSLETTER -->
+<section class="news" id="newsletter">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">The Inner Circle</div>
+      <h2 class="h2">Be First to <em>Know</em>.</h2>
+      <p class="lead">Private restocks, new arrivals, and 10% off your first order. We don't spam — we curate.</p>
+    </div>
     <form class="news-form" onsubmit="event.preventDefault(); subscribe(this);">
       <input type="email" placeholder="your@email.com" required>
       <button type="submit" class="btn btn-primary">Subscribe</button>
     </form>
+    <div class="news-fine">No spam · Unsubscribe anytime</div>
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
+<!-- FOOTER -->
 <footer id="contact">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="#" class="logo" style="text-align:left;">3SSS<span class="logo-sub">Sister Elite Luxe</span></a>
-      <p style="margin-top:18px;">Luxury perfumes from Dubai. Premium skincare made in Canada. A family-owned business based in Surrey, British Columbia.</p>
-      <div style="display:flex;gap:12px;margin-top:24px;">
-        <a href="#" class="icon-btn" style="background:rgba(212,175,55,0.05);border:1px solid rgba(212,175,55,0.2);">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-        <a href="#" class="icon-btn" style="background:rgba(212,175,55,0.05);border:1px solid rgba(212,175,55,0.2);">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 18 6-6-6-6"/></svg>
-        </a>
-        <a href="https://wa.me/16040000000" class="icon-btn" style="background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.3);color:#25d366;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8 8 0 0 0 4.6 16.7L4 21l4.4-1.15a8 8 0 0 0 11.74-7A8 8 0 0 0 17.6 6.32zM12 19.6a6.65 6.65 0 0 1-3.4-.92l-.24-.15-2.5.66.67-2.45-.16-.25a6.66 6.66 0 0 1-1-3.5A6.66 6.66 0 0 1 18.66 13a6.66 6.66 0 0 1-6.66 6.6zm3.65-4.95c-.2-.1-1.18-.58-1.36-.65-.18-.07-.32-.1-.46.1s-.52.65-.64.78c-.12.13-.24.15-.44.05a5.45 5.45 0 0 1-1.6-1 6 6 0 0 1-1.1-1.38c-.12-.2 0-.3.08-.4l.3-.35c.1-.13.13-.2.2-.34a.36.36 0 0 0 0-.34c-.05-.1-.45-1.1-.62-1.5-.16-.4-.33-.34-.45-.35h-.4a.74.74 0 0 0-.54.25 2.26 2.26 0 0 0-.7 1.65 3.92 3.92 0 0 0 .82 2.08 9 9 0 0 0 3.43 3 11.5 11.5 0 0 0 1.15.42 2.76 2.76 0 0 0 1.27.08 2.07 2.07 0 0 0 1.36-.96 1.7 1.7 0 0 0 .12-.95c-.05-.08-.18-.13-.38-.23z"/></svg>
-        </a>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="#" class="logo" style="text-align:left;">
+        <span class="mark">3SSS</span>
+        <span class="sub" style="margin-left:0;">SISTER ELITE LUXE</span>
+      </a>
+      <p>Luxury perfumes from Dubai. Premium skincare blended in Canada. A family-owned maison based in Surrey, British Columbia.</p>
+      <div class="foot-social">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+        <a href="https://wa.me/16040000000" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8 8 0 0 0 4.6 16.7L4 21l4.4-1.15a8 8 0 0 0 11.74-7A8 8 0 0 0 17.6 6.32zM12 19.6a6.65 6.65 0 0 1-3.4-.92l-.24-.15-2.5.66.67-2.45-.16-.25a6.66 6.66 0 0 1-1-3.5A6.66 6.66 0 0 1 18.66 13a6.66 6.66 0 0 1-6.66 6.6z"/></svg></a>
       </div>
     </div>
-    <div class="footer-col">
+    <div class="foot-col">
       <h5>Shop</h5>
-      <a href="#perfumes">All Perfumes</a>
+      <a href="#collection">All Perfumes</a>
       <a href="#">Skincare</a>
       <a href="#">Gift Sets</a>
       <a href="#">Best Sellers</a>
       <a href="#">New Arrivals</a>
     </div>
-    <div class="footer-col">
+    <div class="foot-col">
       <h5>Help</h5>
-      <a href="#">Shipping</a>
-      <a href="#">Returns</a>
+      <a href="#">Shipping &amp; Returns</a>
       <a href="#">Track Order</a>
       <a href="#">Ingredients</a>
+      <a href="#">Care Guide</a>
       <a href="#">FAQ</a>
     </div>
-    <div class="footer-col">
+    <div class="foot-col">
       <h5>Contact</h5>
       <a href="https://wa.me/16040000000">WhatsApp</a>
       <a href="mailto:hello@3ssseliteluxe.ca">hello@3ssseliteluxe.ca</a>
       <a href="#">Surrey, BC, Canada</a>
-      <a href="#" style="color:var(--gold);">Mon-Sat · 10am-7pm PST</a>
+      <a href="#" style="color:var(--gold-warm);">Mon–Sat · 10am–7pm PST</a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div>© 2026 3SSS Sister Elite Luxe Group Ltd. All rights reserved.</div>
-    <div class="pay-icons">
-      <span class="pay-icon">VISA</span>
-      <span class="pay-icon">MC</span>
-      <span class="pay-icon">AMEX</span>
-      <span class="pay-icon">APPLE PAY</span>
-      <span class="pay-icon">G PAY</span>
-      <span class="pay-icon">SHOP</span>
+  <div class="foot-bottom">
+    <div>© 2026 3SSS Sister Elite Luxe Group Ltd</div>
+    <div class="foot-pay">
+      <span>VISA</span>
+      <span>MC</span>
+      <span>AMEX</span>
+      <span>APPLE</span>
+      <span>GOOGLE</span>
+      <span>SHOP</span>
     </div>
   </div>
 </footer>
 
-<!-- ============ WHATSAPP FLOAT ============ -->
-<a href="https://wa.me/16040000000?text=Hi%20there%21%20I%27m%20interested%20in%203SSS%20Sister%20Elite%20Luxe%20perfumes." class="whatsapp-float" target="_blank">
+<!-- WHATSAPP -->
+<a href="https://wa.me/16040000000?text=Hi%20there%21%20I%27m%20interested%20in%203SSS%20Sister%20Elite%20Luxe%20perfumes." class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8 8 0 0 0 4.6 16.7L4 21l4.4-1.15a8 8 0 0 0 11.74-7A8 8 0 0 0 17.6 6.32zM12 19.6a6.65 6.65 0 0 1-3.4-.92l-.24-.15-2.5.66.67-2.45-.16-.25a6.66 6.66 0 0 1-1-3.5A6.66 6.66 0 0 1 18.66 13a6.66 6.66 0 0 1-6.66 6.6zm3.65-4.95c-.2-.1-1.18-.58-1.36-.65-.18-.07-.32-.1-.46.1s-.52.65-.64.78c-.12.13-.24.15-.44.05a5.45 5.45 0 0 1-1.6-1 6 6 0 0 1-1.1-1.38c-.12-.2 0-.3.08-.4l.3-.35c.1-.13.13-.2.2-.34a.36.36 0 0 0 0-.34c-.05-.1-.45-1.1-.62-1.5-.16-.4-.33-.34-.45-.35h-.4a.74.74 0 0 0-.54.25 2.26 2.26 0 0 0-.7 1.65 3.92 3.92 0 0 0 .82 2.08 9 9 0 0 0 3.43 3 11.5 11.5 0 0 0 1.15.42 2.76 2.76 0 0 0 1.27.08 2.07 2.07 0 0 0 1.36-.96 1.7 1.7 0 0 0 .12-.95c-.05-.08-.18-.13-.38-.23z"/></svg>
-  <span class="whatsapp-tip">Chat with us</span>
 </a>
 
-<!-- ============ OVERLAY + CART DRAWER ============ -->
+<!-- OVERLAY + CART -->
 <div class="overlay" id="overlay" onclick="toggleCart()"></div>
 <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
   <div class="cart-head">
-    <h3>Your Cart</h3>
-    <button class="cart-close" onclick="toggleCart()" aria-label="Close cart">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    <h3>Your Selection</h3>
+    <button class="icon-btn" onclick="toggleCart()" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
   </div>
-  <div class="cart-body" id="cartBody">
-    <!-- items populated by JS -->
-  </div>
+  <div class="cart-body" id="cartBody"></div>
   <div class="cart-foot" id="cartFoot" style="display:none;">
     <div id="shipMsgWrap"></div>
     <div class="cart-line"><span>Subtotal</span><span id="subtotalAmt">$0.00</span></div>
-    <div class="cart-line"><span>Estimated Shipping</span><span id="shipAmt">—</span></div>
-    <div class="cart-line"><span>Estimated Tax (BC)</span><span id="taxAmt">$0.00</span></div>
+    <div class="cart-line"><span>Shipping</span><span id="shipAmt">—</span></div>
+    <div class="cart-line"><span>Tax (BC)</span><span id="taxAmt">$0.00</span></div>
     <div class="cart-line total"><span>Total</span><span class="amount" id="totalAmt">$0.00</span></div>
-    <button class="btn btn-primary btn-block" style="margin-top:16px;" onclick="openCheckout()">
+    <button class="btn btn-primary btn-block" style="margin-top:18px;" onclick="openCheckout()">
       Secure Checkout
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </button>
     <div class="pay-row">
       <button class="pay-quick"> Pay</button>
       <button class="pay-quick">G Pay</button>
-      <button class="pay-quick">Shop Pay</button>
+      <button class="pay-quick">Shop</button>
     </div>
   </div>
 </aside>
 
-<!-- ============ CHECKOUT MODAL ============ -->
+<!-- CHECKOUT -->
 <div class="modal" id="checkoutModal">
-  <div class="modal-content" id="modalContent">
-    <button class="icon-btn modal-close" onclick="closeCheckout()" aria-label="Close">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
-    </button>
-    <!-- Step content injected by JS -->
-  </div>
+  <div class="modal-content" id="modalContent"></div>
 </div>
 
-<!-- ============ TOAST ============ -->
+<!-- TOAST -->
 <div class="toast" id="toast">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
   <span id="toastMsg">Added to cart</span>
 </div>
 
 <script>
-// ============ PRODUCT DATA ============
+// ============ DATA ============
 const products = [
-  { id: 'royal-oud',     name: 'Royal Oud',      price: 185, family: 'oud',      tags: ['oud', 'bestseller'],     desc: 'Smoky agarwood, saffron, & rose. The crown of our collection.', badge: 'Bestseller', size: '50ml', color1: '#3a2810', color2: '#0a0604', accent: '#d4af37' },
-  { id: 'desert-rose',   name: 'Desert Rose',    price: 155, family: 'floral',   tags: ['floral'],                desc: 'Damask rose, oud wood, and a whisper of musk.',                                size: '50ml', color1: '#6b2e3d', color2: '#1a0a10', accent: '#e8c97c' },
-  { id: 'amber-noir',    name: 'Amber Noir',     price: 195, family: 'oriental', tags: ['oriental', 'bestseller'],desc: 'Warm amber, vanilla, and dark patchouli.',                                       badge: 'Limited',     size: '50ml', color1: '#7a5618', color2: '#0d0805', accent: '#f4d03f' },
-  { id: 'saffron-mist',  name: 'Saffron Mist',   price: 165, family: 'oriental', tags: ['oriental'],              desc: 'Persian saffron, leather, and sweet honey.',                                                            size: '50ml', color1: '#8a4a1c', color2: '#1a0c04', accent: '#d4af37' },
-  { id: 'oud-maliki',    name: 'Oud Maliki',     price: 225, family: 'oud',      tags: ['oud'],                   desc: 'Cambodian oud aged 12 years. Reserve edition.',                                badge: 'Reserve',     size: '30ml', color1: '#4a2410', color2: '#0a0402', accent: '#e8c97c' },
-  { id: 'velvet-musk',   name: 'Velvet Musk',    price: 145, family: 'musk',     tags: ['musk'],                  desc: 'White musk, cashmere wood, and bergamot.',                                                              size: '50ml', color1: '#2a2820', color2: '#0a0a08', accent: '#f4d03f' },
-  { id: 'bakhoor-elite', name: 'Bakhoor Elite',  price: 175, family: 'oud',      tags: ['oud', 'bestseller'],     desc: 'Smoky bakhoor incense, oud, and frankincense.',                                badge: 'Bestseller',  size: '50ml', color1: '#5d4220', color2: '#0d0904', accent: '#d4af37' },
-  { id: 'golden-sands',  name: 'Golden Sands',   price: 135, family: 'oriental', tags: ['oriental'],              desc: 'Cardamom, gold accord, and warm sandalwood.',                                                           size: '50ml', color1: '#8b6914', color2: '#1a1006', accent: '#f4d03f' }
+  { id: 'royal-oud',     name: 'Royal Oud',     price: 185, family: 'oud',      tags: ['oud', 'bestseller'],     desc: 'Aged Cambodian oud, saffron, and Damask rose.', badge: 'Bestseller', size: '50ml', accent: '#d9b56a', hue1: '#3a2810', hue2: '#0a0604' },
+  { id: 'desert-rose',   name: 'Desert Rose',   price: 155, family: 'floral',   tags: ['floral'],                desc: 'Damask rose, oud wood, and a whisper of musk.', size: '50ml', accent: '#e8c97c', hue1: '#5a2535', hue2: '#180a0e' },
+  { id: 'amber-noir',    name: 'Amber Noir',    price: 195, family: 'oriental', tags: ['oriental', 'bestseller'],desc: 'Warm amber, vanilla, and dark patchouli.', badge: 'Limited', size: '50ml', accent: '#f4d894', hue1: '#7a5618', hue2: '#0d0805' },
+  { id: 'saffron-mist',  name: 'Saffron Mist',  price: 165, family: 'oriental', tags: ['oriental'],              desc: 'Persian saffron, leather, and sweet honey.', size: '50ml', accent: '#d9b56a', hue1: '#7a3f18', hue2: '#1a0a04' },
+  { id: 'oud-maliki',    name: 'Oud Maliki',    price: 225, family: 'oud',      tags: ['oud'],                   desc: 'Cambodian oud aged 12 years. Reserve edition.', badge: 'Reserve', size: '30ml', accent: '#e8c97c', hue1: '#3a1c08', hue2: '#080402' },
+  { id: 'velvet-musk',   name: 'Velvet Musk',   price: 145, family: 'musk',     tags: ['musk'],                  desc: 'White musk, cashmere wood, and bergamot.', size: '50ml', accent: '#f4d894', hue1: '#2a2820', hue2: '#0a0a08' },
+  { id: 'bakhoor-elite', name: 'Bakhoor Elite', price: 175, family: 'oud',      tags: ['oud', 'bestseller'],     desc: 'Smoky bakhoor incense, oud, and frankincense.', badge: 'Bestseller', size: '50ml', accent: '#d9b56a', hue1: '#4d3a1a', hue2: '#0d0904' },
+  { id: 'golden-sands',  name: 'Golden Sands',  price: 135, family: 'oriental', tags: ['oriental'],              desc: 'Cardamom, gold accord, and warm sandalwood.', size: '50ml', accent: '#f4d894', hue1: '#6b4f18', hue2: '#1a1006' }
 ];
 
-// ============ STATE ============
+const testimonials = [
+  { initial: 'A', name: 'Aisha M.', loc: 'Toronto, ON',  text: 'Royal Oud is unlike anything I\'ve worn. The sillage is twelve hours easily — and people stop me to ask.' },
+  { initial: 'F', name: 'Farah K.', loc: 'Calgary, AB',  text: 'The packaging alone could be a Saks Fifth campaign. The fragrance inside is even better.' },
+  { initial: 'L', name: 'Layla H.', loc: 'Vancouver, BC',text: 'Three sisters making this with their own hands shows. Genuine luxury without the markup.' }
+];
+
 let cart = JSON.parse(localStorage.getItem('3sss-cart') || '[]');
 let currentFilter = 'all';
 
-// ============ TAX RATES (Canadian provinces) ============
 const TAX_RATES = {
   'BC': { rate: 0.12, label: 'GST + PST (BC)' },
   'ON': { rate: 0.13, label: 'HST (ON)' },
@@ -1627,74 +1704,118 @@ const TAX_RATES = {
   'NT': { rate: 0.05, label: 'GST (NT)' },
   'NU': { rate: 0.05, label: 'GST (NU)' }
 };
-const FREE_SHIP_THRESHOLD = 150;
+const FREE_SHIP = 150;
 const SHIP_COST = 12.99;
 
-// ============ SVG BOTTLE GENERATOR ============
-function bottleSvg(p, size = 'normal') {
-  const id = p.id;
-  return `<svg viewBox="0 0 160 280" xmlns="http://www.w3.org/2000/svg">
+// ============ REFINED BOTTLE SVG ============
+function bottleSvg(p, opts = {}) {
+  const id = (p.id || 'b') + '-' + (opts.suffix || Math.random().toString(36).slice(2,7));
+  const accent = p.accent || '#d9b56a';
+  const hue1 = p.hue1 || '#3a2810';
+  const hue2 = p.hue2 || '#0a0604';
+  const showLabel = opts.detailed !== false;
+  return `<svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <linearGradient id="bg-${id}" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="${p.color1}"/>
-        <stop offset="50%" stop-color="${p.color1}" stop-opacity="0.7"/>
-        <stop offset="100%" stop-color="${p.color2}"/>
+      <linearGradient id="liq-${id}" x1="20%" y1="0%" x2="80%" y2="100%">
+        <stop offset="0%" stop-color="${hue1}" stop-opacity="0.95"/>
+        <stop offset="50%" stop-color="${hue2}" stop-opacity="1"/>
+        <stop offset="100%" stop-color="#000" stop-opacity="1"/>
       </linearGradient>
       <linearGradient id="cap-${id}" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#b8860b"/>
-        <stop offset="50%" stop-color="${p.accent}"/>
-        <stop offset="100%" stop-color="#b8860b"/>
+        <stop offset="0%" stop-color="#8c6f2a"/>
+        <stop offset="40%" stop-color="${accent}"/>
+        <stop offset="60%" stop-color="${accent}"/>
+        <stop offset="100%" stop-color="#5d4515"/>
+      </linearGradient>
+      <linearGradient id="glass-${id}" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+        <stop offset="20%" stop-color="rgba(255,255,255,0)"/>
+        <stop offset="80%" stop-color="rgba(255,255,255,0)"/>
+        <stop offset="100%" stop-color="rgba(255,255,255,0.10)"/>
       </linearGradient>
     </defs>
-    <rect x="60" y="20" width="40" height="40" rx="3" fill="url(#cap-${id})"/>
-    <rect x="65" y="55" width="30" height="14" fill="#0a0a0a"/>
-    <path d="M35 70 L125 70 L125 250 Q125 260 115 260 L45 260 Q35 260 35 250 Z" fill="url(#bg-${id})" stroke="${p.accent}" stroke-width="1"/>
-    <rect x="45" y="120" width="70" height="80" fill="rgba(255,255,255,0.04)" stroke="${p.accent}" stroke-width="0.5"/>
-    <text x="80" y="155" text-anchor="middle" fill="${p.accent}" font-family="serif" font-size="14" font-style="italic" font-weight="600">3SSS</text>
-    <text x="80" y="172" text-anchor="middle" fill="${p.accent}" font-family="serif" font-size="6" letter-spacing="1.2">${p.name.toUpperCase()}</text>
-    <line x1="55" y1="180" x2="105" y2="180" stroke="${p.accent}" stroke-width="0.3"/>
-    <text x="80" y="193" text-anchor="middle" fill="${p.accent}" font-family="serif" font-size="5" letter-spacing="1">${p.size} · EAU DE PARFUM</text>
+    <!-- shoulder cap -->
+    <rect x="76" y="14" width="48" height="38" rx="3" fill="url(#cap-${id})"/>
+    <rect x="78" y="14" width="2" height="38" fill="rgba(255,255,255,0.3)"/>
+    <!-- collar -->
+    <rect x="82" y="50" width="36" height="14" fill="#0a0a0a"/>
+    <rect x="80" y="62" width="40" height="4" fill="${accent}" opacity="0.8"/>
+    <!-- bottle body -->
+    <path d="M52 70 Q52 64 60 64 L140 64 Q148 64 148 70 L148 290 Q148 304 134 304 L66 304 Q52 304 52 290 Z" fill="url(#liq-${id})" stroke="${accent}" stroke-width="0.8" stroke-opacity="0.7"/>
+    <!-- glass highlight -->
+    <path d="M52 70 Q52 64 60 64 L140 64 Q148 64 148 70 L148 290 Q148 304 134 304 L66 304 Q52 304 52 290 Z" fill="url(#glass-${id})"/>
+    <!-- gold trim top -->
+    <line x1="58" y1="86" x2="142" y2="86" stroke="${accent}" stroke-width="0.4" stroke-opacity="0.5"/>
+    <!-- label -->
+    ${showLabel ? `
+      <rect x="62" y="130" width="76" height="98" fill="rgba(0,0,0,0.25)" stroke="${accent}" stroke-width="0.4" stroke-opacity="0.6"/>
+      <line x1="68" y1="142" x2="132" y2="142" stroke="${accent}" stroke-width="0.3" stroke-opacity="0.7"/>
+      <text x="100" y="170" text-anchor="middle" fill="${accent}" font-family="Cormorant Garamond, serif" font-size="20" font-style="italic" font-weight="500">3SSS</text>
+      <text x="100" y="187" text-anchor="middle" fill="${accent}" font-family="serif" font-size="6.5" letter-spacing="2.5" opacity="0.85">${(p.name || '').toUpperCase()}</text>
+      <line x1="80" y1="195" x2="120" y2="195" stroke="${accent}" stroke-width="0.3"/>
+      <text x="100" y="208" text-anchor="middle" fill="${accent}" font-family="serif" font-size="5.5" letter-spacing="2" opacity="0.75">EAU DE PARFUM</text>
+      <text x="100" y="220" text-anchor="middle" fill="${accent}" font-family="serif" font-size="5.5" letter-spacing="2" opacity="0.75">${(p.size || '50ML').toUpperCase()}</text>
+      <line x1="68" y1="226" x2="132" y2="226" stroke="${accent}" stroke-width="0.3" stroke-opacity="0.7"/>
+    ` : ''}
+    <!-- bottom shadow band -->
+    <rect x="52" y="290" width="96" height="14" fill="rgba(0,0,0,0.4)" rx="3"/>
   </svg>`;
 }
 
-// ============ RENDER PRODUCTS ============
+// ============ RENDER ============
 function renderProducts() {
   const grid = document.getElementById('productGrid');
-  const filtered = currentFilter === 'all'
-    ? products
-    : products.filter(p => p.tags.includes(currentFilter));
-
+  const filtered = currentFilter === 'all' ? products : products.filter(p => p.tags.includes(currentFilter));
   if (filtered.length === 0) {
-    grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--grey-mute);padding:60px 0;">No products in this category yet.</p>';
+    grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--cream-mute);padding:60px 0;">No products in this category yet.</p>';
     return;
   }
-
   grid.innerHTML = filtered.map(p => {
     const inCart = cart.find(i => i.id === p.id);
     return `
-      <div class="product" data-id="${p.id}">
+      <article class="product" data-id="${p.id}">
         <div class="product-img-wrap">
           ${p.badge ? `<div class="product-badge">${p.badge}</div>` : ''}
-          ${bottleSvg(p)}
+          ${bottleSvg(p, { suffix: 'card' })}
+          <button class="product-quick-add ${inCart ? 'added' : ''}" onclick="addToCart('${p.id}')">${inCart ? '✓ Added to Cart' : 'Add to Cart'}</button>
         </div>
         <div class="product-info">
           <div class="product-meta">${p.family} · ${p.size}</div>
           <h3 class="product-name">${p.name}</h3>
+          <div class="product-price">$${p.price}<small>CAD</small></div>
           <p class="product-desc">${p.desc}</p>
-          <div class="product-bottom">
-            <div class="product-price">$${p.price}<span class="currency">CAD</span></div>
-            <button class="add-btn ${inCart ? 'added' : ''}" onclick="addToCart('${p.id}')">
-              ${inCart ? '✓ Added' : '+ Add'}
-            </button>
-          </div>
         </div>
-      </div>
+      </article>
     `;
   }).join('');
 }
 
-// ============ FILTERS ============
-document.getElementById('filterBar').addEventListener('click', (e) => {
+function renderTestimonials() {
+  document.getElementById('testiGrid').innerHTML = testimonials.map(t => `
+    <div class="testi">
+      <div class="testi-stars">
+        ${'★'.repeat(5).split('').map(() => `<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>`).join('')}
+      </div>
+      <p class="testi-quote">"${t.text}"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">${t.initial}</div>
+        <div>
+          <div class="testi-name">${t.name}</div>
+          <div class="testi-loc">${t.loc.toUpperCase()}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderHeroAndSignature() {
+  const royal = products.find(p => p.id === 'royal-oud');
+  document.getElementById('heroBottle').innerHTML = bottleSvg(royal, { suffix: 'hero' });
+  document.getElementById('signatureBottle').innerHTML = bottleSvg(royal, { suffix: 'sig' });
+}
+
+// ============ FILTER ============
+document.getElementById('filterBar').addEventListener('click', e => {
   if (!e.target.classList.contains('filter-chip')) return;
   document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
   e.target.classList.add('active');
@@ -1706,33 +1827,25 @@ document.getElementById('filterBar').addEventListener('click', (e) => {
 function addToCart(id) {
   const p = products.find(x => x.id === id);
   if (!p) return;
-  const existing = cart.find(i => i.id === id);
-  if (existing) existing.qty += 1;
-  else cart.push({ id, name: p.name, price: p.price, size: p.size, family: p.family, qty: 1, color1: p.color1, color2: p.color2, accent: p.accent });
-  saveCart();
-  renderCart();
-  renderProducts();
-  showToast(`${p.name} added to cart`);
+  const ex = cart.find(i => i.id === id);
+  if (ex) ex.qty += 1;
+  else cart.push({ id, name: p.name, price: p.price, size: p.size, family: p.family, qty: 1, accent: p.accent, hue1: p.hue1, hue2: p.hue2 });
+  saveCart(); renderCart(); renderProducts();
+  showToast(`${p.name} added`);
   bumpCart();
 }
 
 function removeFromCart(id) {
   cart = cart.filter(i => i.id !== id);
-  saveCart();
-  renderCart();
-  renderProducts();
+  saveCart(); renderCart(); renderProducts();
 }
 
 function changeQty(id, delta) {
   const item = cart.find(i => i.id === id);
   if (!item) return;
   item.qty += delta;
-  if (item.qty <= 0) {
-    removeFromCart(id);
-    return;
-  }
-  saveCart();
-  renderCart();
+  if (item.qty <= 0) return removeFromCart(id);
+  saveCart(); renderCart();
 }
 
 function saveCart() {
@@ -1741,57 +1854,45 @@ function saveCart() {
 }
 
 function updateCartCount() {
-  const count = cart.reduce((s, i) => s + i.qty, 0);
+  const n = cart.reduce((s, i) => s + i.qty, 0);
   const el = document.getElementById('cartCount');
-  el.textContent = count;
-  el.classList.toggle('show', count > 0);
+  el.textContent = n;
+  el.classList.toggle('show', n > 0);
 }
 
 function bumpCart() {
   const el = document.getElementById('cartCount');
   el.style.transform = 'scale(1.4)';
-  setTimeout(() => el.style.transform = 'scale(1)', 200);
+  setTimeout(() => el.style.transform = 'scale(1)', 180);
 }
 
-function calcTotals(province = 'BC') {
+function calcTotals(prov = 'BC') {
   const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
-  const ship = subtotal === 0 ? 0 : (subtotal >= FREE_SHIP_THRESHOLD ? 0 : SHIP_COST);
-  const taxConfig = TAX_RATES[province] || TAX_RATES.BC;
-  const tax = subtotal * taxConfig.rate;
-  return {
-    subtotal,
-    ship,
-    tax,
-    taxLabel: taxConfig.label,
-    total: subtotal + ship + tax,
-    qualifiesShip: subtotal >= FREE_SHIP_THRESHOLD,
-    awayFromShip: Math.max(0, FREE_SHIP_THRESHOLD - subtotal)
-  };
+  const ship = subtotal === 0 ? 0 : (subtotal >= FREE_SHIP ? 0 : SHIP_COST);
+  const tx = TAX_RATES[prov] || TAX_RATES.BC;
+  const tax = subtotal * tx.rate;
+  return { subtotal, ship, tax, taxLabel: tx.label, total: subtotal + ship + tax, qualifiesShip: subtotal >= FREE_SHIP, away: Math.max(0, FREE_SHIP - subtotal) };
 }
 
-function fmt(n) {
-  return '$' + n.toFixed(2);
-}
+const fmt = n => '$' + n.toFixed(2);
 
-function renderCart(province = 'BC') {
+function renderCart(prov = 'BC') {
   const body = document.getElementById('cartBody');
   const foot = document.getElementById('cartFoot');
-
   if (cart.length === 0) {
     body.innerHTML = `
       <div class="cart-empty">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-        <h4>Your cart is empty</h4>
-        <p>Discover our luxury collection.</p>
-        <button class="btn btn-ghost" style="margin-top:24px;" onclick="toggleCart()">Continue Shopping</button>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <h4>Your selection is empty.</h4>
+        <p>Discover our maison collection.</p>
+        <button class="btn btn-ghost" style="margin-top:24px;" onclick="toggleCart()">Continue Browsing</button>
       </div>`;
     foot.style.display = 'none';
     return;
   }
-
   body.innerHTML = cart.map(item => `
     <div class="cart-item">
-      <div class="cart-item-img">${bottleSvg(item)}</div>
+      <div class="cart-item-img">${bottleSvg(item, { suffix: 'cart' })}</div>
       <div class="cart-item-info">
         <h4>${item.name}</h4>
         <div class="meta">${item.family} · ${item.size}</div>
@@ -1803,32 +1904,28 @@ function renderCart(province = 'BC') {
         </div>
       </div>
       <div class="cart-item-actions">
-        <div style="font-family:var(--serif);font-size:18px;color:var(--gold);">${fmt(item.price * item.qty)}</div>
+        <div class="cart-item-total">${fmt(item.price * item.qty)}</div>
         <button class="remove-btn" onclick="removeFromCart('${item.id}')">Remove</button>
       </div>
     </div>
   `).join('');
-
-  const t = calcTotals(province);
+  const t = calcTotals(prov);
   document.getElementById('subtotalAmt').textContent = fmt(t.subtotal);
   document.getElementById('shipAmt').textContent = t.qualifiesShip ? 'FREE' : fmt(t.ship);
-  document.getElementById('shipAmt').style.color = t.qualifiesShip ? 'var(--gold)' : '';
+  document.getElementById('shipAmt').style.color = t.qualifiesShip ? 'var(--gold-warm)' : '';
   document.getElementById('taxAmt').textContent = fmt(t.tax);
   document.getElementById('totalAmt').textContent = fmt(t.total);
-
-  // shipping progress message
-  const shipWrap = document.getElementById('shipMsgWrap');
+  const sw = document.getElementById('shipMsgWrap');
   if (t.qualifiesShip) {
-    shipWrap.innerHTML = `<div class="ship-msg">✦ You qualify for FREE Canada-wide shipping ✦</div>`;
+    sw.innerHTML = `<div class="ship-msg"><strong>✦ Free Canada-wide shipping unlocked ✦</strong></div>`;
   } else {
-    const pct = Math.min(100, (t.subtotal / FREE_SHIP_THRESHOLD) * 100);
-    shipWrap.innerHTML = `
+    const pct = Math.min(100, (t.subtotal / FREE_SHIP) * 100);
+    sw.innerHTML = `
       <div class="ship-msg">
-        Add <strong style="color:var(--gold);">${fmt(t.awayFromShip)}</strong> for FREE shipping
+        Add <strong>${fmt(t.away)}</strong> for free shipping
         <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
       </div>`;
   }
-
   foot.style.display = 'block';
 }
 
@@ -1838,7 +1935,6 @@ function toggleCart() {
   document.getElementById('overlay').classList.toggle('show');
   document.body.style.overflow = document.getElementById('cartDrawer').classList.contains('show') ? 'hidden' : '';
 }
-
 function toggleMobileMenu() {
   document.getElementById('mobileMenu').classList.toggle('show');
   document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('show') ? 'hidden' : '';
@@ -1856,165 +1952,100 @@ function showToast(msg) {
 
 // ============ CHECKOUT ============
 function openCheckout() {
-  if (cart.length === 0) {
-    showToast('Your cart is empty');
-    return;
-  }
+  if (cart.length === 0) { showToast('Your selection is empty'); return; }
   toggleCart();
   setTimeout(() => {
     document.getElementById('checkoutModal').classList.add('show');
     document.body.style.overflow = 'hidden';
     renderCheckoutForm();
-  }, 300);
+  }, 280);
 }
-
 function closeCheckout() {
   document.getElementById('checkoutModal').classList.remove('show');
   document.body.style.overflow = '';
 }
-
 function renderCheckoutForm() {
-  const provinceOptions = Object.keys(TAX_RATES).map(p => `<option value="${p}" ${p==='BC'?'selected':''}>${p}</option>`).join('');
-  const t = calcTotals('BC');
-
+  const provOpts = Object.keys(TAX_RATES).map(p => `<option value="${p}" ${p==='BC'?'selected':''}>${p}</option>`).join('');
   document.getElementById('modalContent').innerHTML = `
     <button class="icon-btn modal-close" onclick="closeCheckout()" aria-label="Close">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
     <div class="checkout-step">
       <h3>Secure Checkout</h3>
-      <p class="sub">Enter shipping details. Tax & shipping calculated by province.</p>
-
+      <p class="sub">Tax &amp; shipping calculated by province.</p>
       <form id="checkoutForm" onsubmit="event.preventDefault(); placeOrder();">
         <div class="form-row">
-          <div class="form-field">
-            <label>First Name</label>
-            <input required value="Sumaya">
-          </div>
-          <div class="form-field">
-            <label>Last Name</label>
-            <input required value="Hassan">
-          </div>
+          <div class="form-field"><label>First Name</label><input required value="Sumaya"></div>
+          <div class="form-field"><label>Last Name</label><input required value="Hassan"></div>
         </div>
-        <div class="form-field">
-          <label>Email</label>
-          <input type="email" required value="customer@example.ca">
-        </div>
-        <div class="form-field">
-          <label>Address</label>
-          <input required value="123 King George Blvd">
+        <div class="form-field"><label>Email</label><input type="email" required value="customer@example.ca"></div>
+        <div class="form-field"><label>Address</label><input required value="123 King George Blvd"></div>
+        <div class="form-row">
+          <div class="form-field"><label>City</label><input required value="Surrey"></div>
+          <div class="form-field"><label>Postal</label><input required value="V3T 0A0"></div>
         </div>
         <div class="form-row">
-          <div class="form-field">
-            <label>City</label>
-            <input required value="Surrey">
-          </div>
-          <div class="form-field">
-            <label>Postal Code</label>
-            <input required value="V3T 0A0">
-          </div>
+          <div class="form-field"><label>Province</label><select id="provinceSel" onchange="updateCheckoutTotals()">${provOpts}</select></div>
+          <div class="form-field"><label>Phone</label><input type="tel" value="604-555-0100"></div>
         </div>
-        <div class="form-row">
-          <div class="form-field">
-            <label>Province</label>
-            <select id="provinceSel" onchange="updateCheckoutTotals()">${provinceOptions}</select>
-          </div>
-          <div class="form-field">
-            <label>Phone</label>
-            <input type="tel" value="604-555-0100">
-          </div>
-        </div>
-
-        <div class="order-summary" id="orderSummary">
-          ${renderOrderSummary('BC')}
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-block" style="margin-top:20px;">
+        <div class="order-summary" id="orderSummary">${renderOrderSummary('BC')}</div>
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top:16px;">
           Place Order
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
-        <p style="font-size:11px;color:var(--grey-mute);text-align:center;margin-top:12px;letter-spacing:0.1em;">
-          🔒 SSL ENCRYPTED · DEMO PROTOTYPE — NO CHARGE
-        </p>
+        <p style="font-size:10px;color:var(--cream-mute);text-align:center;margin-top:14px;letter-spacing:0.18em;text-transform:uppercase;">SSL Encrypted · Demo Prototype · No Charge</p>
       </form>
     </div>
   `;
 }
-
-function renderOrderSummary(province) {
-  const t = calcTotals(province);
-  const itemLines = cart.map(i => `
-    <div class="summary-line">
-      <span>${i.name} × ${i.qty}</span>
-      <span>${fmt(i.price * i.qty)}</span>
-    </div>`).join('');
-  return `
-    ${itemLines}
-    <div class="summary-line" style="margin-top:8px;padding-top:8px;border-top:1px dashed rgba(212,175,55,0.15);">
-      <span>Subtotal</span><span>${fmt(t.subtotal)}</span>
-    </div>
-    <div class="summary-line">
-      <span>Shipping</span><span>${t.qualifiesShip ? 'FREE' : fmt(t.ship)}</span>
-    </div>
-    <div class="summary-line">
-      <span>${t.taxLabel}</span><span>${fmt(t.tax)}</span>
-    </div>
-    <div class="summary-line total">
-      <span>Order Total</span><span class="v">${fmt(t.total)}</span>
-    </div>
-  `;
+function renderOrderSummary(prov) {
+  const t = calcTotals(prov);
+  const lines = cart.map(i => `<div class="summary-line"><span>${i.name} × ${i.qty}</span><span>${fmt(i.price * i.qty)}</span></div>`).join('');
+  return `${lines}
+    <div class="summary-line" style="margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);"><span>Subtotal</span><span>${fmt(t.subtotal)}</span></div>
+    <div class="summary-line"><span>Shipping</span><span>${t.qualifiesShip ? 'FREE' : fmt(t.ship)}</span></div>
+    <div class="summary-line"><span>${t.taxLabel}</span><span>${fmt(t.tax)}</span></div>
+    <div class="summary-line total"><span>Total</span><span class="v">${fmt(t.total)}</span></div>`;
 }
-
 function updateCheckoutTotals() {
-  const prov = document.getElementById('provinceSel').value;
-  document.getElementById('orderSummary').innerHTML = renderOrderSummary(prov);
+  const p = document.getElementById('provinceSel').value;
+  document.getElementById('orderSummary').innerHTML = renderOrderSummary(p);
 }
-
 function placeOrder() {
   const orderNum = '3SSS-' + Date.now().toString(36).toUpperCase().slice(-8);
   const prov = document.getElementById('provinceSel').value;
   const t = calcTotals(prov);
-
   document.getElementById('modalContent').innerHTML = `
     <button class="icon-btn modal-close" onclick="closeCheckout(); cart=[]; saveCart(); renderCart(); renderProducts();" aria-label="Close">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
     <div class="success-text">
       <div class="success-icon">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
       </div>
-      <h3>Thank You.</h3>
-      <p>Your order has been received and is being prepared.</p>
-      <div class="order-num">Order ${orderNum}</div>
-      <p style="font-size:14px;color:var(--gold);">${fmt(t.total)} · ${prov}</p>
-      <p style="margin-top:12px;font-size:13px;">A confirmation will arrive via email shortly.<br>Estimated delivery: 3–5 business days.</p>
-      <button class="btn btn-primary" style="margin-top:28px;" onclick="closeCheckout(); cart=[]; saveCart(); renderCart(); renderProducts();">
-        Continue Shopping
-      </button>
-    </div>
-  `;
-
-  // Clear cart in background
-  setTimeout(() => {
-    cart = [];
-    saveCart();
-    renderCart();
-    renderProducts();
-  }, 100);
+      <h3>Thank you.</h3>
+      <p>Your order has been received.</p>
+      <div class="order-num">${orderNum}</div>
+      <p style="font-size:13px;color:var(--gold-warm);">${fmt(t.total)} CAD · ${prov}</p>
+      <p style="margin-top:12px;font-size:13px;color:var(--cream-mute);">Confirmation will arrive shortly.<br>Estimated delivery: 3–5 business days.</p>
+      <button class="btn btn-primary" style="margin-top:28px;" onclick="closeCheckout(); cart=[]; saveCart(); renderCart(); renderProducts();">Continue Browsing</button>
+    </div>`;
+  setTimeout(() => { cart = []; saveCart(); renderCart(); renderProducts(); }, 100);
 }
 
 // ============ NEWSLETTER ============
 function subscribe(form) {
-  showToast('✦ Welcome to the Inner Circle. Check your inbox for 10% off.');
+  showToast('✦ Welcome to the Inner Circle');
   form.reset();
 }
 
 // ============ INIT ============
+renderHeroAndSignature();
 renderProducts();
+renderTestimonials();
 renderCart();
 updateCartCount();
 
-// Smooth scroll for nav anchors
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
@@ -2025,14 +2056,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// Header shadow on scroll
 window.addEventListener('scroll', () => {
-  const h = document.querySelector('header');
-  if (window.scrollY > 50) {
-    h.style.boxShadow = '0 4px 30px rgba(0,0,0,0.5)';
-  } else {
-    h.style.boxShadow = 'none';
-  }
+  const h = document.getElementById('siteHeader');
+  if (window.scrollY > 30) h.classList.add('scrolled');
+  else h.classList.remove('scrolled');
 });
 </script>
 </body>
