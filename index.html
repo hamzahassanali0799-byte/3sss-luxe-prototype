@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3SSS Sister Elite Luxe — Luxury Perfumes & Skincare | Surrey, BC</title>
+<meta name="description" content="Imported Dubai perfumes, Canadian-made premium skincare, and exclusive 3SSS gift sets. Free shipping over $150 CAD across Canada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --black-soft: #141414;
+    --black-elev: #1c1c1c;
+    --gold: #d4af37;
+    --gold-bright: #f4d03f;
+    --gold-deep: #b8860b;
+    --gold-soft: #e8c97c;
+    --cream: #faf6ee;
+    --grey-1: #2a2a2a;
+    --grey-2: #3a3a3a;
+    --grey-text: #a9a9a9;
+    --grey-mute: #707070;
+    --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.15);
+    --shadow-deep: 0 20px 60px rgba(0, 0, 0, 0.5);
+    --gradient-gold: linear-gradient(135deg, #b8860b 0%, #d4af37 35%, #f4d03f 50%, #d4af37 65%, #b8860b 100%);
+    --gradient-gold-soft: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    --serif: 'Cormorant Garamond', 'Italiana', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--black);
+    color: var(--cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--gold); color: var(--black); }
+
+  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; letter-spacing: 0.02em; }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+  /* ============ ANNOUNCEMENT BAR ============ */
+  .announce {
+    background: var(--gradient-gold);
+    color: var(--black);
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ============ HEADER ============ */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    transition: all 0.3s ease;
+  }
+  .nav-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 18px 28px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+  }
+  .nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .nav-right { justify-content: flex-end; }
+
+  .nav-link {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.2s ease;
+  }
+  .nav-link:hover { color: var(--gold); }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background: var(--gradient-gold);
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover::after { width: 100%; }
+
+  .logo {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-align: center;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+  }
+  .logo-sub {
+    display: block;
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    color: var(--gold-soft);
+    -webkit-text-fill-color: var(--gold-soft);
+    margin-top: 4px;
+  }
+
+  .icon-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+  .icon-btn:hover { background: rgba(212, 175, 55, 0.1); color: var(--gold); }
+  .icon-btn svg { width: 22px; height: 22px; }
+
+  .cart-count {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: var(--gradient-gold);
+    color: var(--black);
+    font-size: 10px;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+  }
+  .cart-count.show { transform: scale(1); }
+
+  .menu-btn { display: none; }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    height: 92vh;
+    min-height: 640px;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(212, 175, 55, 0.18) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+      linear-gradient(180deg, #0a0a0a 0%, #141414 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(212, 175, 55, 0.02) 2px, rgba(212, 175, 55, 0.02) 4px);
+    pointer-events: none;
+  }
+  .hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-tagline {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-tagline::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .hero h1 {
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 400;
+    line-height: 0.95;
+    margin-bottom: 28px;
+    letter-spacing: -0.02em;
+  }
+  .hero h1 .accent {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+  }
+  .hero p {
+    font-size: 17px;
+    color: var(--grey-text);
+    max-width: 480px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary {
+    background: var(--gradient-gold);
+    color: var(--black);
+    box-shadow: var(--shadow-gold);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.35);
+  }
+  .btn-ghost {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+  }
+  .btn-ghost:hover {
+    background: var(--gold);
+    color: var(--black);
+  }
+  .btn-block { width: 100%; justify-content: center; }
+
+  /* Hero visual - perfume bottle showcase */
+  .hero-visual {
+    position: relative;
+    height: 540px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-bottle {
+    position: absolute;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .hero-bottle.b1 { transform: translate(-90px, -10px) rotate(-6deg); z-index: 2; }
+  .hero-bottle.b2 { transform: translate(0, 10px); z-index: 3; }
+  .hero-bottle.b3 { transform: translate(90px, -20px) rotate(6deg); z-index: 2; }
+  .hero-visual:hover .hero-bottle.b1 { transform: translate(-130px, -20px) rotate(-10deg); }
+  .hero-visual:hover .hero-bottle.b3 { transform: translate(130px, -30px) rotate(10deg); }
+
+  .hero-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, transparent 60%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulse 4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  /* ============ MARQUEE ============ */
+  .marquee {
+    background: var(--black-soft);
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 22px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-flex;
+    gap: 60px;
+    animation: scroll 40s linear infinite;
+    font-family: var(--serif);
+    font-size: 22px;
+    font-style: italic;
+    color: var(--gold-soft);
+  }
+  .marquee-track span { display: inline-flex; align-items: center; gap: 60px; }
+  .marquee-track span::after {
+    content: '✦';
+    color: var(--gold);
+    font-size: 14px;
+  }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ============ SECTIONS ============ */
+  section { padding: 100px 28px; }
+  .section-wrap { max-width: 1400px; margin: 0 auto; }
+
+  .section-head { text-align: center; margin-bottom: 60px; }
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 400;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .section-title .accent {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+  }
+  .section-sub {
+    color: var(--grey-text);
+    font-size: 16px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* ============ FILTER BAR ============ */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  .filter-chip {
+    padding: 10px 22px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--grey-text);
+    transition: all 0.25s ease;
+    cursor: pointer;
+  }
+  .filter-chip:hover { color: var(--gold); border-color: var(--gold); }
+  .filter-chip.active {
+    background: var(--gradient-gold);
+    color: var(--black);
+    border-color: transparent;
+    font-weight: 600;
+  }
+
+  /* ============ PRODUCT GRID ============ */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+  }
+  .product {
+    background: linear-gradient(160deg, var(--black-elev) 0%, var(--black-soft) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+  .product:hover {
+    transform: translateY(-6px);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: var(--shadow-deep), 0 0 50px rgba(212, 175, 55, 0.1);
+  }
+
+  .product-img-wrap {
+    position: relative;
+    aspect-ratio: 1;
+    background:
+      radial-gradient(ellipse at center, rgba(212, 175, 55, 0.12) 0%, transparent 70%),
+      linear-gradient(180deg, #1c1c1c 0%, #0f0f0f 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .product-img-wrap svg {
+    width: 60%;
+    height: 75%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+  }
+  .product:hover .product-img-wrap svg { transform: scale(1.08) translateY(-4px); }
+
+  .product-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--gradient-gold);
+    color: var(--black);
+    padding: 5px 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+  .product-quick {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 16px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 100%);
+  }
+  .product:hover .product-quick { transform: translateY(0); }
+
+  .product-info {
+    padding: 22px;
+  }
+  .product-meta {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .product-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--cream);
+  }
+  .product-desc {
+    font-size: 13px;
+    color: var(--grey-text);
+    margin-bottom: 16px;
+    line-height: 1.5;
+    min-height: 40px;
+  }
+  .product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .product-price {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--gold);
+  }
+  .product-price .currency {
+    font-size: 12px;
+    color: var(--grey-text);
+    margin-left: 4px;
+  }
+  .add-btn {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 10px 18px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .add-btn:hover {
+    background: var(--gradient-gold);
+    color: var(--black);
+    border-color: transparent;
+  }
+  .add-btn.added {
+    background: var(--gradient-gold);
+    color: var(--black);
+    border-color: transparent;
+  }
+
+  /* ============ STORY SECTION ============ */
+  .story {
+    background:
+      radial-gradient(ellipse at 80% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
+      var(--black-soft);
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  }
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .story h2 {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05;
+    margin-bottom: 28px;
+  }
+  .story h2 .accent {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+  }
+  .story p {
+    color: var(--grey-text);
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+  .story-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 40px;
+    font-weight: 500;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grey-mute);
+  }
+
+  .story-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.4) 0%, transparent 50%),
+      linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+  .story-emblem {
+    text-align: center;
+  }
+  .story-emblem svg { width: 200px; height: 200px; margin: 0 auto 20px; }
+  .story-emblem h3 {
+    font-size: 28px;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+  .story-emblem .sisters {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+  }
+
+  /* ============ FEATURES ============ */
+  .features {
+    background: var(--black);
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+  }
+  .feature {
+    text-align: center;
+    padding: 36px 24px;
+    background: linear-gradient(160deg, var(--black-elev) 0%, var(--black-soft) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  .feature:hover {
+    border-color: rgba(212, 175, 55, 0.35);
+    transform: translateY(-4px);
+  }
+  .feature-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50%;
+    color: var(--gold);
+  }
+  .feature h4 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .feature p {
+    font-size: 14px;
+    color: var(--grey-text);
+  }
+
+  /* ============ NEWSLETTER ============ */
+  .newsletter {
+    background:
+      radial-gradient(ellipse at center, rgba(212, 175, 55, 0.12) 0%, transparent 70%),
+      var(--black-soft);
+    text-align: center;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+  }
+  .newsletter h2 {
+    font-size: clamp(36px, 5vw, 52px);
+    margin-bottom: 16px;
+  }
+  .newsletter p { color: var(--grey-text); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .news-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 8px;
+  }
+  .news-form input {
+    flex: 1;
+    background: var(--black);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--cream);
+    padding: 16px 20px;
+    font-family: var(--sans);
+    font-size: 14px;
+    border-radius: 2px;
+    transition: border-color 0.2s ease;
+  }
+  .news-form input:focus { outline: none; border-color: var(--gold); }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--black);
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 80px 28px 30px;
+  }
+  .footer-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+  .footer-brand .logo { text-align: left; margin-bottom: 20px; }
+  .footer-brand p { color: var(--grey-text); font-size: 14px; max-width: 320px; line-height: 1.7; }
+  .footer-col h5 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-family: var(--sans);
+  }
+  .footer-col a {
+    display: block;
+    font-size: 14px;
+    color: var(--grey-text);
+    padding: 6px 0;
+    transition: color 0.2s ease;
+  }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--grey-mute);
+    letter-spacing: 0.1em;
+  }
+  .pay-icons { display: flex; gap: 12px; align-items: center; }
+  .pay-icon {
+    background: var(--black-elev);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--gold-soft);
+  }
+
+  /* ============ WHATSAPP FLOAT ============ */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    z-index: 99;
+    transition: all 0.3s ease;
+    animation: bounce 3s ease-in-out infinite;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+  }
+  .whatsapp-float svg { width: 32px; height: 32px; color: white; }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .whatsapp-tip {
+    position: absolute;
+    right: 72px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--black-elev);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--cream);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  .whatsapp-float:hover .whatsapp-tip { opacity: 1; }
+
+  /* ============ CART DRAWER ============ */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .overlay.show { opacity: 1; pointer-events: all; }
+
+  .cart-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 480px;
+    max-width: 100vw;
+    background: var(--black-soft);
+    border-left: 1px solid rgba(212, 175, 55, 0.2);
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .cart-drawer.show { transform: translateX(0); }
+
+  .cart-head {
+    padding: 24px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cart-head h3 {
+    font-size: 22px;
+    letter-spacing: 0.05em;
+  }
+  .cart-close {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+  .cart-close:hover { background: rgba(212, 175, 55, 0.1); color: var(--gold); }
+
+  .cart-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+  }
+  .cart-body::-webkit-scrollbar { width: 6px; }
+  .cart-body::-webkit-scrollbar-track { background: transparent; }
+  .cart-body::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.3); border-radius: 3px; }
+
+  .cart-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    align-items: center;
+  }
+  .cart-item-img {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(180deg, #1c1c1c 0%, #0f0f0f 100%);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .cart-item-img svg { width: 70%; height: 80%; }
+  .cart-item-info h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .cart-item-info .meta {
+    font-size: 11px;
+    color: var(--grey-mute);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .cart-item-info .price {
+    color: var(--gold);
+    font-family: var(--serif);
+    font-size: 18px;
+  }
+  .qty-control {
+    display: flex;
+    align-items: center;
+    background: var(--black);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 2px;
+    margin-top: 8px;
+    width: fit-content;
+  }
+  .qty-btn {
+    width: 28px;
+    height: 28px;
+    color: var(--gold);
+    font-size: 16px;
+    transition: background 0.15s ease;
+  }
+  .qty-btn:hover { background: rgba(212, 175, 55, 0.1); }
+  .qty-val {
+    min-width: 32px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .cart-item-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+  .remove-btn {
+    color: var(--grey-mute);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+  }
+  .remove-btn:hover { color: var(--gold); }
+
+  .cart-empty {
+    text-align: center;
+    padding: 80px 24px;
+    color: var(--grey-text);
+  }
+  .cart-empty svg { color: var(--gold); width: 60px; height: 60px; margin-bottom: 20px; opacity: 0.4; }
+  .cart-empty h4 { font-size: 22px; margin-bottom: 10px; color: var(--cream); }
+
+  .cart-foot {
+    padding: 24px;
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    background: var(--black);
+  }
+  .cart-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 14px;
+    color: var(--grey-text);
+  }
+  .cart-line.total {
+    font-size: 18px;
+    color: var(--cream);
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    padding-top: 16px;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+  .cart-line.total .amount {
+    font-family: var(--serif);
+    font-size: 24px;
+    color: var(--gold);
+  }
+  .ship-msg {
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    color: var(--gold-soft);
+    padding: 12px;
+    border-radius: 2px;
+    font-size: 12px;
+    text-align: center;
+    margin: 12px 0;
+    letter-spacing: 0.05em;
+  }
+  .progress-bar {
+    height: 4px;
+    background: var(--black-elev);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--gradient-gold);
+    transition: width 0.4s ease;
+  }
+  .pay-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .pay-quick {
+    padding: 12px 8px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+    background: var(--black);
+    color: var(--cream);
+  }
+  .pay-quick:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ============ CHECKOUT MODAL ============ */
+  .modal {
+    position: fixed;
+    inset: 0;
+    z-index: 400;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal.show { display: flex; }
+  .modal-content {
+    background: var(--black-soft);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 6px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 40px;
+    position: relative;
+    box-shadow: var(--shadow-deep);
+  }
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+  .modal-close:hover { background: rgba(212, 175, 55, 0.1); color: var(--gold); }
+  .checkout-step h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  .checkout-step .sub { color: var(--grey-text); font-size: 14px; margin-bottom: 28px; }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .form-field { margin-bottom: 12px; }
+  .form-field label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 6px;
+  }
+  .form-field input, .form-field select {
+    width: 100%;
+    background: var(--black);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    color: var(--cream);
+    padding: 12px 14px;
+    font-family: var(--sans);
+    font-size: 14px;
+    border-radius: 2px;
+    transition: border-color 0.2s ease;
+  }
+  .form-field input:focus, .form-field select:focus { outline: none; border-color: var(--gold); }
+
+  .order-summary {
+    background: var(--black);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .summary-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 13px;
+    color: var(--grey-text);
+  }
+  .summary-line.total {
+    font-size: 16px;
+    color: var(--cream);
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    padding-top: 12px;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+  .summary-line.total .v { color: var(--gold); font-family: var(--serif); font-size: 22px; }
+
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 24px;
+    background: var(--gradient-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    animation: pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes pop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+  }
+  .success-text { text-align: center; }
+  .success-text h3 { font-size: 32px; margin-bottom: 12px; }
+  .success-text p { color: var(--grey-text); margin-bottom: 8px; }
+  .order-num { font-family: var(--serif); color: var(--gold); font-size: 20px; margin: 16px 0; }
+
+  /* ============ TOAST ============ */
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--black-elev);
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    padding: 14px 24px;
+    color: var(--cream);
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: var(--shadow-deep);
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+  .toast svg { color: var(--gold); width: 20px; height: 20px; }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 900px) {
+    .nav-left, .nav-right .nav-link { display: none; }
+    .nav-wrap { grid-template-columns: auto 1fr auto; }
+    .menu-btn { display: flex; }
+    .hero { height: auto; min-height: auto; padding: 60px 0 30px; }
+    .hero-content { grid-template-columns: 1fr; gap: 30px; padding-top: 40px; }
+    .hero-visual { height: 360px; order: -1; }
+    .hero-bottle.b1 { transform: translate(-60px, -10px) rotate(-6deg) scale(0.7); }
+    .hero-bottle.b2 { transform: translate(0, 10px) scale(0.7); }
+    .hero-bottle.b3 { transform: translate(60px, -20px) rotate(6deg) scale(0.7); }
+    .hero-glow { width: 320px; height: 320px; }
+    section { padding: 60px 20px; }
+    .nav-wrap { padding: 14px 20px; }
+    .story-grid { grid-template-columns: 1fr; gap: 40px; }
+    .story-stats { grid-template-columns: 1fr; gap: 20px; padding-top: 24px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .modal-content { padding: 28px 20px; }
+    .news-form { flex-direction: column; }
+    .product-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .product-info { padding: 18px; }
+    .product-name { font-size: 18px; }
+    .product-price { font-size: 18px; }
+    .add-btn { padding: 8px 12px; font-size: 10px; }
+    .cart-drawer { width: 100%; }
+    .marquee-track { font-size: 18px; gap: 40px; }
+  }
+
+  @media (max-width: 480px) {
+    .product-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .product-info { padding: 14px; }
+    .product-name { font-size: 16px; }
+    .product-desc { display: none; }
+    .product-meta { font-size: 9px; }
+    .product-price { font-size: 16px; }
+    .product-bottom { flex-direction: column; align-items: stretch; gap: 8px; }
+    .add-btn { justify-content: center; padding: 8px; font-size: 10px; }
+  }
+
+  /* mobile menu */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: var(--black);
+    z-index: 400;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+  }
+  .mobile-menu.show { transform: translateX(0); }
+  .mobile-menu-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    margin-bottom: 24px;
+  }
+  .mobile-menu a {
+    padding: 18px 0;
+    font-size: 18px;
+    font-family: var(--serif);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<!-- ============ ANNOUNCEMENT ============ -->
+<div class="announce">✦ Free Canada-wide shipping over $150 CAD ✦ Imported from Dubai · Made in Canada ✦</div>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="nav-wrap">
+    <div class="nav-left">
+      <a href="#shop" class="nav-link">Shop</a>
+      <a href="#perfumes" class="nav-link">Perfumes</a>
+      <a href="#story" class="nav-link">Our Story</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <a href="#" class="logo">3SSS<span class="logo-sub">Sister Elite Luxe</span></a>
+    <div class="nav-right">
+      <a href="#" class="nav-link" style="display:none">Account</a>
+      <button class="icon-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Account">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+      <button class="icon-btn cart-trigger" aria-label="Cart" onclick="toggleCart()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="icon-btn menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-head">
+    <a href="#" class="logo">3SSS<span class="logo-sub">Sister Elite Luxe</span></a>
+    <button class="icon-btn" onclick="toggleMobileMenu()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <a href="#shop" onclick="toggleMobileMenu()">Shop All <span style="color:var(--gold)">→</span></a>
+  <a href="#perfumes" onclick="toggleMobileMenu()">Luxury Perfumes <span style="color:var(--gold)">→</span></a>
+  <a href="#story" onclick="toggleMobileMenu()">Our Story <span style="color:var(--gold)">→</span></a>
+  <a href="#contact" onclick="toggleMobileMenu()">Contact <span style="color:var(--gold)">→</span></a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div>
+      <div class="hero-tagline">Imported from Dubai · Crafted in Canada</div>
+      <h1>Where Sisterhood<br>Meets <span class="accent">Elegance</span></h1>
+      <p>A curated collection of luxury perfumes, premium skincare, and exclusive gift sets — handpicked by three sisters in Surrey, BC for the woman who chooses excellence.</p>
+      <div class="hero-cta">
+        <a href="#perfumes" class="btn btn-primary">
+          Discover Collection
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#story" class="btn btn-ghost">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-glow"></div>
+      <!-- Bottles using inline SVG -->
+      <div class="hero-bottle b1">
+        <svg width="160" height="280" viewBox="0 0 160 280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#3a2810"/>
+              <stop offset="50%" stop-color="#1a1208"/>
+              <stop offset="100%" stop-color="#0a0604"/>
+            </linearGradient>
+            <linearGradient id="cap1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#b8860b"/>
+              <stop offset="50%" stop-color="#f4d03f"/>
+              <stop offset="100%" stop-color="#b8860b"/>
+            </linearGradient>
+          </defs>
+          <rect x="60" y="20" width="40" height="40" rx="3" fill="url(#cap1)"/>
+          <rect x="65" y="55" width="30" height="15" fill="#0a0a0a"/>
+          <rect x="35" y="70" width="90" height="180" rx="6" fill="url(#bg1)" stroke="#d4af37" stroke-width="1"/>
+          <rect x="45" y="120" width="70" height="80" fill="rgba(212,175,55,0.05)" stroke="#d4af37" stroke-width="0.5"/>
+          <text x="80" y="155" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="14" font-style="italic" font-weight="500">3SSS</text>
+          <text x="80" y="172" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="7" letter-spacing="1.5">ROYAL OUD</text>
+          <line x1="55" y1="180" x2="105" y2="180" stroke="#d4af37" stroke-width="0.3"/>
+          <text x="80" y="195" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="6" letter-spacing="1">DUBAI</text>
+        </svg>
+      </div>
+      <div class="hero-bottle b2">
+        <svg width="180" height="320" viewBox="0 0 180 320" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#5d4220"/>
+              <stop offset="50%" stop-color="#2a1d0a"/>
+              <stop offset="100%" stop-color="#0d0904"/>
+            </linearGradient>
+            <linearGradient id="cap2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#d4af37"/>
+              <stop offset="50%" stop-color="#f4d03f"/>
+              <stop offset="100%" stop-color="#b8860b"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="90" cy="35" rx="28" ry="22" fill="url(#cap2)"/>
+          <rect x="75" y="50" width="30" height="18" fill="#0a0a0a"/>
+          <path d="M30 70 Q30 60 40 60 L140 60 Q150 60 150 70 L150 280 Q150 295 135 295 L45 295 Q30 295 30 280 Z" fill="url(#bg2)" stroke="#d4af37" stroke-width="1.5"/>
+          <rect x="48" y="130" width="84" height="100" fill="rgba(212,175,55,0.06)" stroke="#d4af37" stroke-width="0.5"/>
+          <text x="90" y="170" text-anchor="middle" fill="#f4d03f" font-family="serif" font-size="20" font-style="italic" font-weight="600">3SSS</text>
+          <text x="90" y="190" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="9" letter-spacing="2">SISTER ELITE</text>
+          <text x="90" y="205" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="9" letter-spacing="2">LUXE</text>
+          <line x1="60" y1="215" x2="120" y2="215" stroke="#d4af37" stroke-width="0.3"/>
+          <text x="90" y="228" text-anchor="middle" fill="#e8c97c" font-family="serif" font-size="6" letter-spacing="1.5">SIGNATURE NO.1</text>
+        </svg>
+      </div>
+      <div class="hero-bottle b3">
+        <svg width="160" height="280" viewBox="0 0 160 280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#7a5618"/>
+              <stop offset="50%" stop-color="#3a280c"/>
+              <stop offset="100%" stop-color="#0d0805"/>
+            </linearGradient>
+            <linearGradient id="cap3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#b8860b"/>
+              <stop offset="50%" stop-color="#e8c97c"/>
+              <stop offset="100%" stop-color="#b8860b"/>
+            </linearGradient>
+          </defs>
+          <polygon points="60,15 100,15 95,55 65,55" fill="url(#cap3)"/>
+          <rect x="65" y="55" width="30" height="15" fill="#0a0a0a"/>
+          <path d="M40 70 L120 70 L120 250 Q120 260 110 260 L50 260 Q40 260 40 250 Z" fill="url(#bg3)" stroke="#d4af37" stroke-width="1"/>
+          <rect x="50" y="120" width="60" height="80" fill="rgba(212,175,55,0.05)" stroke="#d4af37" stroke-width="0.5"/>
+          <text x="80" y="155" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="13" font-style="italic" font-weight="500">3SSS</text>
+          <text x="80" y="172" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="6" letter-spacing="1.2">AMBER NOIR</text>
+          <line x1="55" y1="182" x2="105" y2="182" stroke="#d4af37" stroke-width="0.3"/>
+          <text x="80" y="195" text-anchor="middle" fill="#d4af37" font-family="serif" font-size="6" letter-spacing="1">EAU DE PARFUM</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Royal Oud</span><span>Desert Rose</span><span>Amber Noir</span><span>Saffron Mist</span><span>Velvet Musk</span><span>Bakhoor Elite</span><span>Golden Sands</span><span>Royal Oud</span><span>Desert Rose</span><span>Amber Noir</span><span>Saffron Mist</span><span>Velvet Musk</span><span>Bakhoor Elite</span><span>Golden Sands</span>
+  </div>
+</div>
+
+<!-- ============ PERFUMES ============ -->
+<section id="perfumes">
+  <div class="section-wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">The Collection</div>
+      <h2 class="section-title">Luxury <span class="accent">Perfumes</span></h2>
+      <p class="section-sub">Eight signature scents, each handpicked from Dubai's most prestigious houses. Long-lasting. Unforgettable.</p>
+    </div>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="oud">Oud</button>
+      <button class="filter-chip" data-filter="floral">Floral</button>
+      <button class="filter-chip" data-filter="oriental">Oriental</button>
+      <button class="filter-chip" data-filter="musk">Musk</button>
+      <button class="filter-chip" data-filter="bestseller">Best Sellers</button>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+      <!-- products populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="story" id="story">
+  <div class="section-wrap">
+    <div class="story-grid">
+      <div>
+        <div class="section-eyebrow">A Family Legacy</div>
+        <h2>Three Sisters,<br>One <span class="accent">Vision</span></h2>
+        <p>3SSS — Sumaya, Salam, and Saabiriin — three Somali-Canadian sisters who turned a shared love for Dubai's storied perfume tradition into a luxury brand for the modern woman.</p>
+        <p>Every fragrance in our collection is hand-selected from the souks of the Emirates. Every cream, balm, and oil is crafted in our own Surrey, BC studio under Health Canada compliance. Nothing leaves our hands without our name on it.</p>
+        <div class="story-stats">
+          <div>
+            <div class="stat-num">3</div>
+            <div class="stat-label">Sisters</div>
+          </div>
+          <div>
+            <div class="stat-num">8+</div>
+            <div class="stat-label">Signature Scents</div>
+          </div>
+          <div>
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Curated</div>
+          </div>
+        </div>
+      </div>
+      <div class="story-visual">
+        <div class="story-emblem">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="emblem" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#b8860b"/>
+                <stop offset="50%" stop-color="#f4d03f"/>
+                <stop offset="100%" stop-color="#b8860b"/>
+              </linearGradient>
+            </defs>
+            <circle cx="100" cy="100" r="92" fill="none" stroke="url(#emblem)" stroke-width="1.5"/>
+            <circle cx="100" cy="100" r="80" fill="none" stroke="url(#emblem)" stroke-width="0.5"/>
+            <text x="100" y="90" text-anchor="middle" fill="url(#emblem)" font-family="serif" font-size="48" font-weight="600" font-style="italic">3SSS</text>
+            <line x1="60" y1="105" x2="140" y2="105" stroke="url(#emblem)" stroke-width="0.5"/>
+            <text x="100" y="125" text-anchor="middle" fill="url(#emblem)" font-family="serif" font-size="9" letter-spacing="3">SISTER ELITE LUXE</text>
+            <text x="100" y="140" text-anchor="middle" fill="url(#emblem)" font-family="serif" font-size="7" letter-spacing="2">EST. 2026 · SURREY BC</text>
+            <text x="100" y="165" text-anchor="middle" fill="url(#emblem)" font-family="serif" font-size="14" letter-spacing="1">✦</text>
+          </svg>
+          <h3>The 3SSS Mark</h3>
+          <div class="sisters">Sumaya · Salam · Saabiriin</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="features">
+  <div class="section-wrap">
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/></svg>
+        </div>
+        <h4>Authentic Imports</h4>
+        <p>Direct from Dubai. Never diluted. Never substituted.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h4>Health Canada Compliant</h4>
+        <p>Every skincare product meets Canadian labeling standards.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h4>Free Canadian Shipping</h4>
+        <p>Canada Post & UPS on orders over $150 CAD.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h4>Secure Checkout</h4>
+        <p>SSL encrypted. Apple Pay, Google Pay, Shop Pay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="newsletter">
+  <div class="section-wrap">
+    <div class="section-eyebrow">Inner Circle</div>
+    <h2>Be the First to <span style="background:var(--gradient-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-style:italic">Know</span></h2>
+    <p>New arrivals, private restocks, and 10% off your first order. We don't spam — we curate.</p>
+    <form class="news-form" onsubmit="event.preventDefault(); subscribe(this);">
+      <input type="email" placeholder="your@email.com" required>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo" style="text-align:left;">3SSS<span class="logo-sub">Sister Elite Luxe</span></a>
+      <p style="margin-top:18px;">Luxury perfumes from Dubai. Premium skincare made in Canada. A family-owned business based in Surrey, British Columbia.</p>
+      <div style="display:flex;gap:12px;margin-top:24px;">
+        <a href="#" class="icon-btn" style="background:rgba(212,175,55,0.05);border:1px solid rgba(212,175,55,0.2);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" class="icon-btn" style="background:rgba(212,175,55,0.05);border:1px solid rgba(212,175,55,0.2);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a href="https://wa.me/16040000000" class="icon-btn" style="background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.3);color:#25d366;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8 8 0 0 0 4.6 16.7L4 21l4.4-1.15a8 8 0 0 0 11.74-7A8 8 0 0 0 17.6 6.32zM12 19.6a6.65 6.65 0 0 1-3.4-.92l-.24-.15-2.5.66.67-2.45-.16-.25a6.66 6.66 0 0 1-1-3.5A6.66 6.66 0 0 1 18.66 13a6.66 6.66 0 0 1-6.66 6.6zm3.65-4.95c-.2-.1-1.18-.58-1.36-.65-.18-.07-.32-.1-.46.1s-.52.65-.64.78c-.12.13-.24.15-.44.05a5.45 5.45 0 0 1-1.6-1 6 6 0 0 1-1.1-1.38c-.12-.2 0-.3.08-.4l.3-.35c.1-.13.13-.2.2-.34a.36.36 0 0 0 0-.34c-.05-.1-.45-1.1-.62-1.5-.16-.4-.33-.34-.45-.35h-.4a.74.74 0 0 0-.54.25 2.26 2.26 0 0 0-.7 1.65 3.92 3.92 0 0 0 .82 2.08 9 9 0 0 0 3.43 3 11.5 11.5 0 0 0 1.15.42 2.76 2.76 0 0 0 1.27.08 2.07 2.07 0 0 0 1.36-.96 1.7 1.7 0 0 0 .12-.95c-.05-.08-.18-.13-.38-.23z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Shop</h5>
+      <a href="#perfumes">All Perfumes</a>
+      <a href="#">Skincare</a>
+      <a href="#">Gift Sets</a>
+      <a href="#">Best Sellers</a>
+      <a href="#">New Arrivals</a>
+    </div>
+    <div class="footer-col">
+      <h5>Help</h5>
+      <a href="#">Shipping</a>
+      <a href="#">Returns</a>
+      <a href="#">Track Order</a>
+      <a href="#">Ingredients</a>
+      <a href="#">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <a href="https://wa.me/16040000000">WhatsApp</a>
+      <a href="mailto:hello@3ssseliteluxe.ca">hello@3ssseliteluxe.ca</a>
+      <a href="#">Surrey, BC, Canada</a>
+      <a href="#" style="color:var(--gold);">Mon-Sat · 10am-7pm PST</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 3SSS Sister Elite Luxe Group Ltd. All rights reserved.</div>
+    <div class="pay-icons">
+      <span class="pay-icon">VISA</span>
+      <span class="pay-icon">MC</span>
+      <span class="pay-icon">AMEX</span>
+      <span class="pay-icon">APPLE PAY</span>
+      <span class="pay-icon">G PAY</span>
+      <span class="pay-icon">SHOP</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLOAT ============ -->
+<a href="https://wa.me/16040000000?text=Hi%20there%21%20I%27m%20interested%20in%203SSS%20Sister%20Elite%20Luxe%20perfumes." class="whatsapp-float" target="_blank">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8 8 0 0 0 4.6 16.7L4 21l4.4-1.15a8 8 0 0 0 11.74-7A8 8 0 0 0 17.6 6.32zM12 19.6a6.65 6.65 0 0 1-3.4-.92l-.24-.15-2.5.66.67-2.45-.16-.25a6.66 6.66 0 0 1-1-3.5A6.66 6.66 0 0 1 18.66 13a6.66 6.66 0 0 1-6.66 6.6zm3.65-4.95c-.2-.1-1.18-.58-1.36-.65-.18-.07-.32-.1-.46.1s-.52.65-.64.78c-.12.13-.24.15-.44.05a5.45 5.45 0 0 1-1.6-1 6 6 0 0 1-1.1-1.38c-.12-.2 0-.3.08-.4l.3-.35c.1-.13.13-.2.2-.34a.36.36 0 0 0 0-.34c-.05-.1-.45-1.1-.62-1.5-.16-.4-.33-.34-.45-.35h-.4a.74.74 0 0 0-.54.25 2.26 2.26 0 0 0-.7 1.65 3.92 3.92 0 0 0 .82 2.08 9 9 0 0 0 3.43 3 11.5 11.5 0 0 0 1.15.42 2.76 2.76 0 0 0 1.27.08 2.07 2.07 0 0 0 1.36-.96 1.7 1.7 0 0 0 .12-.95c-.05-.08-.18-.13-.38-.23z"/></svg>
+  <span class="whatsapp-tip">Chat with us</span>
+</a>
+
+<!-- ============ OVERLAY + CART DRAWER ============ -->
+<div class="overlay" id="overlay" onclick="toggleCart()"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-head">
+    <h3>Your Cart</h3>
+    <button class="cart-close" onclick="toggleCart()" aria-label="Close cart">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <!-- items populated by JS -->
+  </div>
+  <div class="cart-foot" id="cartFoot" style="display:none;">
+    <div id="shipMsgWrap"></div>
+    <div class="cart-line"><span>Subtotal</span><span id="subtotalAmt">$0.00</span></div>
+    <div class="cart-line"><span>Estimated Shipping</span><span id="shipAmt">—</span></div>
+    <div class="cart-line"><span>Estimated Tax (BC)</span><span id="taxAmt">$0.00</span></div>
+    <div class="cart-line total"><span>Total</span><span class="amount" id="totalAmt">$0.00</span></div>
+    <button class="btn btn-primary btn-block" style="margin-top:16px;" onclick="openCheckout()">
+      Secure Checkout
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    </button>
+    <div class="pay-row">
+      <button class="pay-quick"> Pay</button>
+      <button class="pay-quick">G Pay</button>
+      <button class="pay-quick">Shop Pay</button>
+    </div>
+  </div>
+</aside>
+
+<!-- ============ CHECKOUT MODAL ============ -->
+<div class="modal" id="checkoutModal">
+  <div class="modal-content" id="modalContent">
+    <button class="icon-btn modal-close" onclick="closeCheckout()" aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <!-- Step content injected by JS -->
+  </div>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div class="toast" id="toast">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+  <span id="toastMsg">Added to cart</span>
+</div>
+
+<script>
+// ============ PRODUCT DATA ============
+const products = [
+  { id: 'royal-oud',     name: 'Royal Oud',      price: 185, family: 'oud',      tags: ['oud', 'bestseller'],     desc: 'Smoky agarwood, saffron, & rose. The crown of our collection.', badge: 'Bestseller', size: '50ml', color1: '#3a2810', color2: '#0a0604', accent: '#d4af37' },
+  { id: 'desert-rose',   name: 'Desert Rose',    price: 155, family: 'floral',   tags: ['floral'],                desc: 'Damask rose, oud wood, and a whisper of musk.',                                size: '50ml', color1: '#6b2e3d', color2: '#1a0a10', accent: '#e8c97c' },
+  { id: 'amber-noir',    name: 'Amber Noir',     price: 195, family: 'oriental', tags: ['oriental', 'bestseller'],desc: 'Warm amber, vanilla, and dark patchouli.',                                       badge: 'Limited',     size: '50ml', color1: '#7a5618', color2: '#0d0805', accent: '#f4d03f' },
+  { id: 'saffron-mist',  name: 'Saffron Mist',   price: 165, family: 'oriental', tags: ['oriental'],              desc: 'Persian saffron, leather, and sweet honey.',                                                            size: '50ml', color1: '#8a4a1c', color2: '#1a0c04', accent: '#d4af37' },
+  { id: 'oud-maliki',    name: 'Oud Maliki',     price: 225, family: 'oud',      tags: ['oud'],                   desc: 'Cambodian oud aged 12 years. Reserve edition.',                                badge: 'Reserve',     size: '30ml', color1: '#4a2410', color2: '#0a0402', accent: '#e8c97c' },
+  { id: 'velvet-musk',   name: 'Velvet Musk',    price: 145, family: 'musk',     tags: ['musk'],                  desc: 'White musk, cashmere wood, and bergamot.',                                                              size: '50ml', color1: '#2a2820', color2: '#0a0a08', accent: '#f4d03f' },
+  { id: 'bakhoor-elite', name: 'Bakhoor Elite',  price: 175, family: 'oud',      tags: ['oud', 'bestseller'],     desc: 'Smoky bakhoor incense, oud, and frankincense.',                                badge: 'Bestseller',  size: '50ml', color1: '#5d4220', color2: '#0d0904', accent: '#d4af37' },
+  { id: 'golden-sands',  name: 'Golden Sands',   price: 135, family: 'oriental', tags: ['oriental'],              desc: 'Cardamom, gold accord, and warm sandalwood.',                                                           size: '50ml', color1: '#8b6914', color2: '#1a1006', accent: '#f4d03f' }
+];
+
+// ============ STATE ============
+let cart = JSON.parse(localStorage.getItem('3sss-cart') || '[]');
+let currentFilter = 'all';
+
+// ============ TAX RATES (Canadian provinces) ============
+const TAX_RATES = {
+  'BC': { rate: 0.12, label: 'GST + PST (BC)' },
+  'ON': { rate: 0.13, label: 'HST (ON)' },
+  'AB': { rate: 0.05, label: 'GST (AB)' },
+  'QC': { rate: 0.14975, label: 'GST + QST (QC)' },
+  'NS': { rate: 0.15, label: 'HST (NS)' },
+  'NB': { rate: 0.15, label: 'HST (NB)' },
+  'PE': { rate: 0.15, label: 'HST (PE)' },
+  'NL': { rate: 0.15, label: 'HST (NL)' },
+  'MB': { rate: 0.12, label: 'GST + PST (MB)' },
+  'SK': { rate: 0.11, label: 'GST + PST (SK)' },
+  'YT': { rate: 0.05, label: 'GST (YT)' },
+  'NT': { rate: 0.05, label: 'GST (NT)' },
+  'NU': { rate: 0.05, label: 'GST (NU)' }
+};
+const FREE_SHIP_THRESHOLD = 150;
+const SHIP_COST = 12.99;
+
+// ============ SVG BOTTLE GENERATOR ============
+function bottleSvg(p, size = 'normal') {
+  const id = p.id;
+  return `<svg viewBox="0 0 160 280" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bg-${id}" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="${p.color1}"/>
+        <stop offset="50%" stop-color="${p.color1}" stop-opacity="0.7"/>
+        <stop offset="100%" stop-color="${p.color2}"/>
+      </linearGradient>
+      <linearGradient id="cap-${id}" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#b8860b"/>
+        <stop offset="50%" stop-color="${p.accent}"/>
+        <stop offset="100%" stop-color="#b8860b"/>
+      </linearGradient>
+    </defs>
+    <rect x="60" y="20" width="40" height="40" rx="3" fill="url(#cap-${id})"/>
+    <rect x="65" y="55" width="30" height="14" fill="#0a0a0a"/>
+    <path d="M35 70 L125 70 L125 250 Q125 260 115 260 L45 260 Q35 260 35 250 Z" fill="url(#bg-${id})" stroke="${p.accent}" stroke-width="1"/>
+    <rect x="45" y="120" width="70" height="80" fill="rgba(255,255,255,0.04)" stroke="${p.accent}" stroke-width="0.5"/>
+    <text x="80" y="155" text-anchor="middle" fill="${p.accent}" font-family="serif" font-size="14" font-style="italic" font-weight="600">3SSS</text>
+    <text x="80" y="172" text-anchor="middle" fill="${p.accent}" font-family="serif" font-size="6" letter-spacing="1.2">${p.name.toUpperCase()}</text>
+    <line x1="55" y1="180" x2="105" y2="180" stroke="${p.accent}" stroke-width="0.3"/>
+    <text x="80" y="193" text-anchor="middle" fill="${p.accent}" font-family="serif" font-size="5" letter-spacing="1">${p.size} · EAU DE PARFUM</text>
+  </svg>`;
+}
+
+// ============ RENDER PRODUCTS ============
+function renderProducts() {
+  const grid = document.getElementById('productGrid');
+  const filtered = currentFilter === 'all'
+    ? products
+    : products.filter(p => p.tags.includes(currentFilter));
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--grey-mute);padding:60px 0;">No products in this category yet.</p>';
+    return;
+  }
+
+  grid.innerHTML = filtered.map(p => {
+    const inCart = cart.find(i => i.id === p.id);
+    return `
+      <div class="product" data-id="${p.id}">
+        <div class="product-img-wrap">
+          ${p.badge ? `<div class="product-badge">${p.badge}</div>` : ''}
+          ${bottleSvg(p)}
+        </div>
+        <div class="product-info">
+          <div class="product-meta">${p.family} · ${p.size}</div>
+          <h3 class="product-name">${p.name}</h3>
+          <p class="product-desc">${p.desc}</p>
+          <div class="product-bottom">
+            <div class="product-price">$${p.price}<span class="currency">CAD</span></div>
+            <button class="add-btn ${inCart ? 'added' : ''}" onclick="addToCart('${p.id}')">
+              ${inCart ? '✓ Added' : '+ Add'}
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ============ FILTERS ============
+document.getElementById('filterBar').addEventListener('click', (e) => {
+  if (!e.target.classList.contains('filter-chip')) return;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  e.target.classList.add('active');
+  currentFilter = e.target.dataset.filter;
+  renderProducts();
+});
+
+// ============ CART ============
+function addToCart(id) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  const existing = cart.find(i => i.id === id);
+  if (existing) existing.qty += 1;
+  else cart.push({ id, name: p.name, price: p.price, size: p.size, family: p.family, qty: 1, color1: p.color1, color2: p.color2, accent: p.accent });
+  saveCart();
+  renderCart();
+  renderProducts();
+  showToast(`${p.name} added to cart`);
+  bumpCart();
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(i => i.id !== id);
+  saveCart();
+  renderCart();
+  renderProducts();
+}
+
+function changeQty(id, delta) {
+  const item = cart.find(i => i.id === id);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) {
+    removeFromCart(id);
+    return;
+  }
+  saveCart();
+  renderCart();
+}
+
+function saveCart() {
+  localStorage.setItem('3sss-cart', JSON.stringify(cart));
+  updateCartCount();
+}
+
+function updateCartCount() {
+  const count = cart.reduce((s, i) => s + i.qty, 0);
+  const el = document.getElementById('cartCount');
+  el.textContent = count;
+  el.classList.toggle('show', count > 0);
+}
+
+function bumpCart() {
+  const el = document.getElementById('cartCount');
+  el.style.transform = 'scale(1.4)';
+  setTimeout(() => el.style.transform = 'scale(1)', 200);
+}
+
+function calcTotals(province = 'BC') {
+  const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  const ship = subtotal === 0 ? 0 : (subtotal >= FREE_SHIP_THRESHOLD ? 0 : SHIP_COST);
+  const taxConfig = TAX_RATES[province] || TAX_RATES.BC;
+  const tax = subtotal * taxConfig.rate;
+  return {
+    subtotal,
+    ship,
+    tax,
+    taxLabel: taxConfig.label,
+    total: subtotal + ship + tax,
+    qualifiesShip: subtotal >= FREE_SHIP_THRESHOLD,
+    awayFromShip: Math.max(0, FREE_SHIP_THRESHOLD - subtotal)
+  };
+}
+
+function fmt(n) {
+  return '$' + n.toFixed(2);
+}
+
+function renderCart(province = 'BC') {
+  const body = document.getElementById('cartBody');
+  const foot = document.getElementById('cartFoot');
+
+  if (cart.length === 0) {
+    body.innerHTML = `
+      <div class="cart-empty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <h4>Your cart is empty</h4>
+        <p>Discover our luxury collection.</p>
+        <button class="btn btn-ghost" style="margin-top:24px;" onclick="toggleCart()">Continue Shopping</button>
+      </div>`;
+    foot.style.display = 'none';
+    return;
+  }
+
+  body.innerHTML = cart.map(item => `
+    <div class="cart-item">
+      <div class="cart-item-img">${bottleSvg(item)}</div>
+      <div class="cart-item-info">
+        <h4>${item.name}</h4>
+        <div class="meta">${item.family} · ${item.size}</div>
+        <div class="price">${fmt(item.price)}</div>
+        <div class="qty-control">
+          <button class="qty-btn" onclick="changeQty('${item.id}', -1)">−</button>
+          <span class="qty-val">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty('${item.id}', 1)">+</button>
+        </div>
+      </div>
+      <div class="cart-item-actions">
+        <div style="font-family:var(--serif);font-size:18px;color:var(--gold);">${fmt(item.price * item.qty)}</div>
+        <button class="remove-btn" onclick="removeFromCart('${item.id}')">Remove</button>
+      </div>
+    </div>
+  `).join('');
+
+  const t = calcTotals(province);
+  document.getElementById('subtotalAmt').textContent = fmt(t.subtotal);
+  document.getElementById('shipAmt').textContent = t.qualifiesShip ? 'FREE' : fmt(t.ship);
+  document.getElementById('shipAmt').style.color = t.qualifiesShip ? 'var(--gold)' : '';
+  document.getElementById('taxAmt').textContent = fmt(t.tax);
+  document.getElementById('totalAmt').textContent = fmt(t.total);
+
+  // shipping progress message
+  const shipWrap = document.getElementById('shipMsgWrap');
+  if (t.qualifiesShip) {
+    shipWrap.innerHTML = `<div class="ship-msg">✦ You qualify for FREE Canada-wide shipping ✦</div>`;
+  } else {
+    const pct = Math.min(100, (t.subtotal / FREE_SHIP_THRESHOLD) * 100);
+    shipWrap.innerHTML = `
+      <div class="ship-msg">
+        Add <strong style="color:var(--gold);">${fmt(t.awayFromShip)}</strong> for FREE shipping
+        <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+      </div>`;
+  }
+
+  foot.style.display = 'block';
+}
+
+// ============ DRAWER / MENU ============
+function toggleCart() {
+  document.getElementById('cartDrawer').classList.toggle('show');
+  document.getElementById('overlay').classList.toggle('show');
+  document.body.style.overflow = document.getElementById('cartDrawer').classList.contains('show') ? 'hidden' : '';
+}
+
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('show');
+  document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('show') ? 'hidden' : '';
+}
+
+// ============ TOAST ============
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+// ============ CHECKOUT ============
+function openCheckout() {
+  if (cart.length === 0) {
+    showToast('Your cart is empty');
+    return;
+  }
+  toggleCart();
+  setTimeout(() => {
+    document.getElementById('checkoutModal').classList.add('show');
+    document.body.style.overflow = 'hidden';
+    renderCheckoutForm();
+  }, 300);
+}
+
+function closeCheckout() {
+  document.getElementById('checkoutModal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function renderCheckoutForm() {
+  const provinceOptions = Object.keys(TAX_RATES).map(p => `<option value="${p}" ${p==='BC'?'selected':''}>${p}</option>`).join('');
+  const t = calcTotals('BC');
+
+  document.getElementById('modalContent').innerHTML = `
+    <button class="icon-btn modal-close" onclick="closeCheckout()" aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="checkout-step">
+      <h3>Secure Checkout</h3>
+      <p class="sub">Enter shipping details. Tax & shipping calculated by province.</p>
+
+      <form id="checkoutForm" onsubmit="event.preventDefault(); placeOrder();">
+        <div class="form-row">
+          <div class="form-field">
+            <label>First Name</label>
+            <input required value="Sumaya">
+          </div>
+          <div class="form-field">
+            <label>Last Name</label>
+            <input required value="Hassan">
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" required value="customer@example.ca">
+        </div>
+        <div class="form-field">
+          <label>Address</label>
+          <input required value="123 King George Blvd">
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>City</label>
+            <input required value="Surrey">
+          </div>
+          <div class="form-field">
+            <label>Postal Code</label>
+            <input required value="V3T 0A0">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Province</label>
+            <select id="provinceSel" onchange="updateCheckoutTotals()">${provinceOptions}</select>
+          </div>
+          <div class="form-field">
+            <label>Phone</label>
+            <input type="tel" value="604-555-0100">
+          </div>
+        </div>
+
+        <div class="order-summary" id="orderSummary">
+          ${renderOrderSummary('BC')}
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top:20px;">
+          Place Order
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p style="font-size:11px;color:var(--grey-mute);text-align:center;margin-top:12px;letter-spacing:0.1em;">
+          🔒 SSL ENCRYPTED · DEMO PROTOTYPE — NO CHARGE
+        </p>
+      </form>
+    </div>
+  `;
+}
+
+function renderOrderSummary(province) {
+  const t = calcTotals(province);
+  const itemLines = cart.map(i => `
+    <div class="summary-line">
+      <span>${i.name} × ${i.qty}</span>
+      <span>${fmt(i.price * i.qty)}</span>
+    </div>`).join('');
+  return `
+    ${itemLines}
+    <div class="summary-line" style="margin-top:8px;padding-top:8px;border-top:1px dashed rgba(212,175,55,0.15);">
+      <span>Subtotal</span><span>${fmt(t.subtotal)}</span>
+    </div>
+    <div class="summary-line">
+      <span>Shipping</span><span>${t.qualifiesShip ? 'FREE' : fmt(t.ship)}</span>
+    </div>
+    <div class="summary-line">
+      <span>${t.taxLabel}</span><span>${fmt(t.tax)}</span>
+    </div>
+    <div class="summary-line total">
+      <span>Order Total</span><span class="v">${fmt(t.total)}</span>
+    </div>
+  `;
+}
+
+function updateCheckoutTotals() {
+  const prov = document.getElementById('provinceSel').value;
+  document.getElementById('orderSummary').innerHTML = renderOrderSummary(prov);
+}
+
+function placeOrder() {
+  const orderNum = '3SSS-' + Date.now().toString(36).toUpperCase().slice(-8);
+  const prov = document.getElementById('provinceSel').value;
+  const t = calcTotals(prov);
+
+  document.getElementById('modalContent').innerHTML = `
+    <button class="icon-btn modal-close" onclick="closeCheckout(); cart=[]; saveCart(); renderCart(); renderProducts();" aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="success-text">
+      <div class="success-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      </div>
+      <h3>Thank You.</h3>
+      <p>Your order has been received and is being prepared.</p>
+      <div class="order-num">Order ${orderNum}</div>
+      <p style="font-size:14px;color:var(--gold);">${fmt(t.total)} · ${prov}</p>
+      <p style="margin-top:12px;font-size:13px;">A confirmation will arrive via email shortly.<br>Estimated delivery: 3–5 business days.</p>
+      <button class="btn btn-primary" style="margin-top:28px;" onclick="closeCheckout(); cart=[]; saveCart(); renderCart(); renderProducts();">
+        Continue Shopping
+      </button>
+    </div>
+  `;
+
+  // Clear cart in background
+  setTimeout(() => {
+    cart = [];
+    saveCart();
+    renderCart();
+    renderProducts();
+  }, 100);
+}
+
+// ============ NEWSLETTER ============
+function subscribe(form) {
+  showToast('✦ Welcome to the Inner Circle. Check your inbox for 10% off.');
+  form.reset();
+}
+
+// ============ INIT ============
+renderProducts();
+renderCart();
+updateCartCount();
+
+// Smooth scroll for nav anchors
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Header shadow on scroll
+window.addEventListener('scroll', () => {
+  const h = document.querySelector('header');
+  if (window.scrollY > 50) {
+    h.style.boxShadow = '0 4px 30px rgba(0,0,0,0.5)';
+  } else {
+    h.style.boxShadow = 'none';
+  }
+});
+</script>
+</body>
+</html>
